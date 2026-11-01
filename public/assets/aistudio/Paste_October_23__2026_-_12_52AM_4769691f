@@ -1,0 +1,535 @@
+# SARVE VIDHYA — COMPLETE WEBSITE IMPROVEMENT & PRODUCT MATURITY MASTER PROMPT
+## Full-Stack Audit, Student Experience, AI Learning, Accessibility, Security, Performance, and Production Readiness
+
+Act as a principal full-stack engineer, senior product designer, AI systems architect, accessibility specialist, database engineer, security auditor, and educational technology expert.
+
+Your mission is to transform the existing Sarve Vidhya website into a polished, reliable, intelligent, student-first educational platform that is ready for real users.
+
+This prompt covers improvements **other than the previously specified handwritten-notes generator, handwritten diagram engine, class-wise chapter library, NCERT-based notes, personalized greeting, and 2027 examination countdown and reminder system**. Do not rebuild those features unnecessarily. Audit how they integrate with the rest of the application, and focus this task on the remaining product experience and technical quality.
+
+The goal is not simply to add more features. The goal is to make every existing feature useful, connected, accessible, secure, fast, and reliable.
+
+## PHASE 1 — CONDUCT A COMPLETE APPLICATION AUDIT
+
+Before editing the code, inspect the entire repository.
+
+Examine the frontend, backend, API routes, database models, authentication, authorization, AI integrations, state management, reusable components, environment variables, dependencies, error logs, responsive layouts, and deployment configuration.
+
+Identify:
+
+- Pages that exist but are incomplete.
+- Buttons and controls that do nothing.
+- Features that use hardcoded or temporary data.
+- Duplicate functionality and unnecessary dependencies.
+- API routes that fail or return inconsistent responses.
+- Database operations that are not persistent.
+- Components that display stale or incorrect state.
+- Navigation paths that lead to missing pages.
+- Broken loading, empty, and error states.
+- Accessibility problems and mobile layout failures.
+- Security vulnerabilities and permission gaps.
+- Performance bottlenecks and unnecessary API calls.
+- Inconsistent styling, typography, spacing, and component behavior.
+
+Create a prioritized issue list based on severity and student impact. Then fix the problems instead of merely documenting them.
+
+Preserve the existing technology stack and functioning functionality wherever possible. Do not replace working modules simply because another framework or library is available.
+
+Do not claim a feature works unless it has been tested.
+
+## PHASE 2 — REDESIGN THE ENTIRE STUDENT EXPERIENCE
+
+Create a cohesive, modern learning experience that makes students want to return to the platform.
+
+The design should feel like a professional educational product, not a generic AI dashboard or a collection of unrelated pages.
+
+### 2.1 Design system
+
+Establish a consistent design system covering:
+
+- Typography and text hierarchy.
+- Spacing and layout grids.
+- Buttons and interactive controls.
+- Form fields and validation messages.
+- Cards, panels, dialogs, and navigation.
+- Colors and semantic status indicators.
+- Icons and illustrations.
+- Loading skeletons and progress indicators.
+- Tooltips, notifications, and confirmation dialogs.
+
+Use a restrained, professional visual language with excellent readability. Avoid excessive gradients, oversized headings, random colors, unnecessary animations, and repetitive decorative cards.
+
+Provide a light theme and a dark theme with appropriate contrast. Remember the student's selected theme across sessions.
+
+Create reusable design tokens rather than manually styling each page independently.
+
+### 2.2 Improve the homepage
+
+The homepage should immediately explain what Sarve Vidhya does and help users choose their next action.
+
+For visitors who are not logged in, provide a clear introduction, a preview of the learning experience, a way to explore permitted public content, and a straightforward registration or sign-in option.
+
+For authenticated students, prioritize useful information such as:
+
+- Continue learning.
+- Resume the last activity.
+- Review incomplete learning tasks.
+- Start a practice session.
+- Ask the AI tutor a question.
+- View learning progress.
+- Access saved resources.
+- See relevant announcements and upcoming tasks.
+
+Do not display every feature simultaneously. Rank content according to relevance and let students customize their dashboard.
+
+Avoid fake statistics, fabricated testimonials, unnecessary marketing pop-ups, and artificial urgency.
+
+### 2.3 Navigation and information architecture
+
+Create clear, consistent navigation across the application.
+
+The student interface should provide dedicated access to learning, practice, AI assistance, progress, saved resources, and account settings.
+
+Use breadcrumbs on deeply nested pages, preserve relevant search and filter states, and provide clear back-navigation behavior.
+
+On mobile, use a compact navigation system that keeps essential actions accessible without covering content.
+
+Every navigation item must lead to a real page or a working feature. Remove dead links and placeholder destinations.
+
+## PHASE 3 — BUILD A POWERFUL AI STUDY COMPANION
+
+Create a separate AI tutoring experience focused on helping students understand concepts and solve academic problems. This is distinct from the notes-generation functionality.
+
+### 3.1 Context-aware AI tutor
+
+Allow students to ask questions through a dedicated tutoring interface.
+
+Where appropriate, the tutor should use the student's selected class, subject, chapter, curriculum, and current activity to tailor the explanation.
+
+Support requests such as:
+
+- Explain this concept in simpler language.
+- Give me a real-world example.
+- Ask me questions to test my understanding.
+- Help me solve this problem without revealing the answer immediately.
+- Explain why my answer is incorrect.
+- Compare two related concepts.
+- Give me hints one step at a time.
+- Create a short practice session from the current topic.
+
+The tutor should teach rather than simply provide final answers. It should adapt its explanation to the student's level and explain technical terms when necessary.
+
+### 3.2 Grounded answers and uncertainty
+
+Use relevant verified educational sources when available. Retrieve the specific supporting material before claiming that an answer comes from an official textbook or curriculum.
+
+When a question is ambiguous, ask for clarification or state the assumption being used.
+
+When reliable information is unavailable, acknowledge uncertainty rather than inventing facts, citations, or textbook references.
+
+Keep the tutor's instructions separate from retrieved documents. Treat uploaded content and retrieved material as untrusted data, not as instructions to change system behavior.
+
+### 3.3 Tutoring session history
+
+Allow authenticated users to view previous tutoring sessions, search conversation history, rename sessions, delete conversations, and resume a session where appropriate.
+
+Save conversation history only according to the platform's privacy policy and user settings.
+
+Provide controls to clear individual sessions and explain how stored data is handled.
+
+Keep AI conversation history separate from official published educational content.
+
+### 3.4 AI cost and reliability
+
+Implement server-side request validation, rate limits, sensible response-length limits, retry handling, timeouts, and graceful provider-failure messages.
+
+Prevent duplicate generation requests when students repeatedly click a button.
+
+Use caching for appropriate repeated requests, without exposing one student's private information to another.
+
+Provide a fallback experience when the AI provider is unavailable. Do not silently substitute unrelated answers or fabricated responses.
+
+## PHASE 4 — CREATE A COMPLETE PRACTICE AND ASSESSMENT SYSTEM
+
+Develop a functional assessment engine independent of the notes viewer.
+
+### 4.1 Practice modes
+
+Support:
+
+- Topic-based quizzes.
+- Chapter practice.
+- Timed tests.
+- Untimed practice.
+- Mixed-topic revision.
+- Examination-style mock tests.
+- Previous-paper practice where legitimate source material is available.
+- Custom tests based on student-selected topics.
+
+Allow students to choose a difficulty level, number of questions, and available time.
+
+### 4.2 Question quality
+
+Questions should be relevant to the selected syllabus and appropriate for the chosen class.
+
+Support multiple-choice questions, multiple-select questions, numerical answers, short answers, and other suitable formats.
+
+Store answer keys, explanations, difficulty, topic mapping, source metadata, and validation status.
+
+AI-generated questions must be checked for answer correctness, ambiguity, duplicate choices, and consistency between the question and its explanation.
+
+Do not publish a question as verified if its answer has not passed the required checks.
+
+### 4.3 Assessment interface
+
+Build a clean examination interface with:
+
+- Question navigation.
+- Answer selection and editing.
+- Clear marking of answered and unanswered questions.
+- Question flagging for later review.
+- A reliable timer where applicable.
+- Automatic answer saving.
+- A confirmation step before final submission.
+- Recovery behavior for accidental refreshes or temporary connection failures.
+
+The timer must be controlled by authoritative server timestamps for server-managed tests. Do not rely exclusively on the browser clock.
+
+Do not reveal answers before submission when the assessment is configured as a test.
+
+### 4.4 Results and explanations
+
+After submission, show the score, accuracy, unanswered questions, topic-wise performance, and explanations.
+
+Distinguish between confirmed results and assessments that are incomplete or pending evaluation.
+
+Provide a review mode where students can revisit questions, inspect their answers, and understand the correct reasoning.
+
+Do not fabricate a score or mark an unanswered question as correct.
+
+## PHASE 5 — PERSONALIZED LEARNING AND PROGRESS ANALYTICS
+
+Build a meaningful progress system that helps students understand how they are improving.
+
+Track actual learning activities such as completed assessments, attempted questions, reviewed concepts, saved resources, and completed learning tasks.
+
+Display useful analytics, including:
+
+- Accuracy by subject and topic.
+- Performance across completed assessments.
+- Strong and weak topics.
+- Progress over time.
+- Questions answered correctly and incorrectly.
+- Topics that need revision.
+- Recent learning activity.
+- Personal learning goals and milestones.
+
+Use real stored records and clearly define each metric.
+
+Do not create misleading charts from sample values or inflate progress simply because a page was opened.
+
+### 5.1 Actionable recommendations
+
+Use the student's actual performance to recommend the next useful action.
+
+For example, if a student repeatedly answers questions incorrectly in a particular topic, suggest reviewing the relevant concept and then attempting a short practice set.
+
+Keep recommendations explainable. Where possible, identify which performance signals led to the recommendation.
+
+Allow students to dismiss recommendations or choose their own next activity.
+
+Avoid labeling students as unintelligent, weak learners, or failures. Present progress constructively and respectfully.
+
+### 5.2 Personal goals
+
+Let students create goals such as completing a topic, finishing a practice set, or studying a subject regularly.
+
+Track goal completion using real activity records.
+
+Provide optional weekly progress summaries without creating pressure through excessive notifications or punitive streak systems.
+
+## PHASE 6 — STUDY PLANNER AND TASK MANAGEMENT
+
+Create a functional study planner that allows students to organize their work.
+
+This is separate from the examination countdown system.
+
+Support tasks for chapters, practice sessions, assignments, revision activities, and personal study goals.
+
+Students should be able to:
+
+- Create, edit, and delete tasks.
+- Assign due dates.
+- Set priorities.
+- Organize tasks by subject.
+- Mark tasks complete.
+- Reschedule unfinished work.
+- View daily, weekly, and monthly plans.
+- See overdue and upcoming tasks.
+- Set personal reminders where supported.
+
+Store tasks in the database and associate them with the correct user.
+
+Use the student's selected time zone when scheduling tasks and reminders.
+
+Do not automatically mark a task complete because the student visited the related page.
+
+If intelligent planning is implemented, recommendations should consider the available time, task duration estimates, deadlines, and user-selected priorities. Clearly label estimated durations as estimates.
+
+## PHASE 7 — ACCESSIBILITY AND INCLUSIVE LEARNING
+
+Design the platform to support students with different learning preferences and accessibility requirements.
+
+Provide controls for:
+
+- Text size.
+- Reading width and line spacing.
+- Reduced motion.
+- High-contrast presentation.
+- Keyboard navigation.
+- Screen-reader-friendly content.
+- Focus visibility.
+- Captions or transcripts for supported audio and video.
+- Text-to-speech and speech input when properly configured.
+- Simplified explanations and step-by-step learning modes.
+
+Respect the operating system's reduced-motion preference and provide a user-controlled setting.
+
+Use semantic HTML and accessible form labels. Make dialogs, menus, and interactive diagrams usable with a keyboard where possible.
+
+Do not rely on color alone to communicate correctness, warnings, progress, or status.
+
+Provide text alternatives for meaningful diagrams and visual learning materials.
+
+Accessibility settings should persist across sessions for authenticated users and remain usable for visitors where feasible.
+
+Test accessibility with automated checks and manual keyboard and screen-reader workflows. Do not claim complete accessibility based on automated scans alone.
+
+## PHASE 8 — USER ACCOUNT, PROFILE, AND SECURITY
+
+Build a reliable account system with clearly separated permissions.
+
+### Student area
+
+Students should only see and access student-appropriate functionality.
+
+Remove teacher and administrator management controls from student navigation. Do not merely hide these controls with CSS; enforce role-based permissions in the backend.
+
+Students must not be able to modify official content, access other users' private information, or invoke privileged APIs.
+
+### Administrator area
+
+Provide a separate, protected administrative interface for authorized personnel.
+
+Administrator functions may include user management, content review, curriculum maintenance, moderation, service monitoring, and examination-calendar updates.
+
+Restrict sensitive actions by role and require confirmation for destructive changes.
+
+Do not allow public registration to grant administrator privileges.
+
+### Profile management
+
+Allow users to manage their display name, profile image where supported, account preferences, theme, accessibility settings, notification preferences, and security options.
+
+Validate all changes and persist them correctly.
+
+Implement secure authentication, password hashing where applicable, appropriate token or session handling, authorization checks, and safe account recovery.
+
+Provide a logout function that reliably invalidates the relevant session or token according to the authentication architecture.
+
+Add appropriate protection against brute-force attempts, cross-site scripting, injection, insecure direct object references, and unauthorized file access.
+
+Avoid storing secrets in frontend code, browser-visible environment variables, or publicly accessible files.
+
+## PHASE 9 — NOTIFICATIONS AND IN-APP COMMUNICATION
+
+Create a centralized notification system for useful platform events.
+
+Support notifications for completed assessments, relevant learning reminders, task deadlines, content updates, and other events that students have opted to receive.
+
+Provide an in-app notification center with read/unread status, timestamps, and links to the relevant destination.
+
+Allow users to configure supported notification channels and frequency.
+
+Prevent duplicate notifications and avoid repeatedly sending the same message.
+
+Use background jobs or a reliable scheduling mechanism for notifications that must be delivered later.
+
+Track delivery attempts and failures. If email, push notifications, or another external channel has not been configured, clearly indicate that limitation rather than pretending delivery is active.
+
+Do not use excessive notifications, misleading urgency, or engagement tricks that distract from learning.
+
+## PHASE 10 — SEARCH, SAVED ITEMS, AND CONTENT DISCOVERY
+
+Create a unified discovery experience across the parts of the platform that already exist.
+
+Provide search for educational topics, published learning resources, relevant questions, and other accessible content.
+
+Where practical, support spelling tolerance, useful suggestions, recent searches, and filtering by class, subject, topic, and content type.
+
+Do not expose private notes, private conversations, unpublished drafts, or administrator-only resources in public search results.
+
+Allow students to save relevant learning resources and organize them into personal collections.
+
+Provide clear empty states when no results are found and useful alternatives when appropriate.
+
+Make search results open the correct destination, preserving relevant context when the student returns.
+
+## PHASE 11 — PERFORMANCE AND SCALABILITY
+
+Optimize the application without sacrificing correctness or accessibility.
+
+Audit unnecessary component re-renders, repeated API requests, oversized dependencies, slow database queries, unbounded lists, and inefficient file processing.
+
+Implement pagination or incremental loading for large collections.
+
+Use database indexes that match actual query patterns and inspect slow queries before adding unnecessary indexes.
+
+Cache public, reusable data where appropriate. Do not cache private responses across users or ignore permission changes.
+
+Optimize images and static assets. Load expensive components only when needed.
+
+For long-running AI operations, provide progress feedback and a recoverable workflow. Persist completed results so a temporary navigation or network problem does not discard useful work.
+
+Use structured logs, error monitoring, and basic operational metrics without recording passwords, API keys, or unnecessary sensitive content.
+
+Define appropriate request timeouts and resource limits.
+
+## PHASE 12 — RELIABILITY AND ERROR RECOVERY
+
+Every major workflow must handle expected failures gracefully.
+
+Test scenarios such as:
+
+- The AI provider is unavailable.
+- The database connection fails.
+- The user's session expires.
+- A request times out.
+- A file upload is invalid.
+- A user loses network connectivity.
+- A duplicate request is submitted.
+- A resource no longer exists.
+- A user lacks the required permissions.
+- A scheduled job fails.
+- A generated result cannot be saved.
+
+Provide clear user-facing messages and safe retry options.
+
+Do not show raw stack traces or internal database errors.
+
+Use consistent API error formats, appropriate HTTP status codes, structured server logs, and correlation identifiers where helpful.
+
+Implement retries only for appropriate transient errors. Avoid retry loops that can duplicate payments, notifications, or other side effects.
+
+For operations that must not be repeated, use idempotency controls where appropriate.
+
+## PHASE 13 — TESTING AND QUALITY ASSURANCE
+
+Build a practical automated testing strategy around the actual application.
+
+### Unit tests
+
+Test core business logic, calculations, validation, permissions, progress metrics, and notification scheduling.
+
+### Integration tests
+
+Test API routes against the real application services and a controlled test database.
+
+Verify that data is saved, retrieved, updated, and deleted correctly.
+
+### End-to-end tests
+
+Test complete student journeys:
+
+1. A visitor explores the website and registers.
+2. The student logs in and sees their personalized dashboard.
+3. The student finds a learning resource and saves it.
+4. The student asks the AI tutor a question.
+5. The student completes a practice assessment.
+6. The student reviews the results.
+7. The student creates and completes a study task.
+8. The student updates account and accessibility settings.
+9. The student logs out and verifies that protected information is no longer accessible.
+
+Test administrative journeys separately with authorized test accounts.
+
+### Responsive and accessibility tests
+
+Test common desktop, tablet, and mobile viewport sizes.
+
+Verify navigation, dialogs, forms, charts, and interactive elements using keyboard navigation and appropriate accessibility tooling.
+
+### Regression testing
+
+After changes, verify that the existing notes-generation, diagram, library, and examination features continue to work.
+
+Do not use test fixtures as production content or let test users contaminate real student analytics.
+
+## PHASE 14 — PRODUCTION DEPLOYMENT AND MAINTAINABILITY
+
+Review the current deployment configuration and correct problems that prevent reliable startup or production use.
+
+Provide:
+
+- A documented environment-variable template.
+- Database setup and migration instructions where relevant.
+- Reliable development and production scripts.
+- Health-check endpoints.
+- Build-time and runtime validation.
+- Secure production configuration.
+- Error logging and monitoring guidance.
+- Backup and recovery guidance for persistent data.
+- API documentation.
+- Dependency and vulnerability checks.
+- Deployment instructions consistent with the existing hosting platform.
+
+Do not expose sensitive configuration in the client bundle.
+
+Do not silently change the production database schema or delete existing data. Use safe, documented migration procedures where changes are necessary.
+
+Keep dependencies purposeful and compatible. Avoid unnecessary packages and overlapping libraries that duplicate existing functionality.
+
+## PHASE 15 — FINAL ACCEPTANCE CRITERIA
+
+The improvement project is complete only when:
+
+1. The main student journeys work end to end.
+2. Navigation, controls, and buttons perform their advertised actions.
+3. AI tutoring uses a real configured provider and handles errors safely.
+4. Practice assessments calculate and save results correctly.
+5. Progress analytics use real records rather than hardcoded data.
+6. The study planner saves tasks and tracks completion correctly.
+7. Accessibility controls work and persist as intended.
+8. Student, teacher, and administrator permissions are enforced by the backend.
+9. Student information is isolated between accounts.
+10. Search and saved resources return appropriate results.
+11. Notifications use real configured services and prevent duplicate delivery.
+12. Core workflows remain usable on mobile and desktop.
+13. The application handles database, network, and provider failures gracefully.
+14. Automated tests cover important workflows and permissions.
+15. Existing notes, diagram, library, and examination functionality remains intact.
+16. Production setup and environment configuration are documented.
+17. No important feature is represented by a mock response, nonfunctional button, or fake success message.
+
+## FINAL EXECUTION INSTRUCTIONS
+
+Inspect the current repository first. Identify the actual technology stack, existing functionality, and highest-priority defects.
+
+Implement improvements incrementally, prioritizing broken functionality, security, student usability, and data correctness before cosmetic refinements.
+
+Reuse existing modules where appropriate. Keep code maintainable, avoid duplicate implementations, and do not create unnecessary architectural complexity.
+
+Do not stop after proposing a design or creating static screens. Connect each implemented feature to its actual backend service and persistence layer, then test the complete workflow.
+
+If an external service requires credentials or permissions that are unavailable, implement the appropriate integration structure, document the required configuration, and report what remains unverified.
+
+At completion, provide a concise audit report with:
+- The major problems discovered.
+- The features implemented.
+- The files and modules changed.
+- The database and API changes.
+- The tests performed and their actual results.
+- Any remaining limitations.
+- The exact commands and environment variables needed to run and deploy the application.
+
+**Final objective:** Deliver a cohesive, student-first Sarve Vidhya platform that is easier to navigate, more intelligent, more accessible, more secure, more reliable, and genuinely useful for everyday learning—not merely a website with more features.

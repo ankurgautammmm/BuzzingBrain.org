@@ -1,0 +1,298 @@
+# BUZZINGBRAIN — COMPLETE APPLICATION TRANSFORMATION PROMPT
+## Existing Project Enhancement, Feature Completion, Educational Accuracy, and Premium User Experience
+
+### PROJECT MISSION
+
+I want you to transform my existing BuzzingBrain application into a complete, professional, reliable, and visually impressive educational platform for students studying Classes 9, 10, 11, and 12, preparing for CBSE Board examinations, NEET, JEE, and competitive examinations, including students taking a drop year.
+
+You are not being asked to create a new application from scratch. You must work directly inside my existing project, understand how its current features are implemented, and improve the actual source code, frontend, backend, database integration, educational content, and user experience.
+
+The existing project already contains multiple educational modules, including handwritten-style notes, AI-assisted learning, examinations, progress tracking, virtual laboratories, and educational video generation. Your responsibility is to make these features cohesive, dependable, complete, and genuinely useful to students.
+
+Do not simply inspect the code and provide recommendations. Do not create another audit report or development roadmap instead of implementing the changes. Do not waste the task on lengthy planning or repeated confirmations. Make sensible implementation decisions, edit the relevant files, connect the components, and continue until all feasible improvements have been completed.
+
+The final application should feel like one integrated learning platform rather than a collection of unrelated tools.
+
+---
+
+# 1. UNDERSTAND AND PRESERVE THE EXISTING PROJECT
+
+Begin by examining the current repository sufficiently to understand its framework, project structure, components, API services, database, authentication system, existing routes, environment variables, and deployment configuration.
+
+Preserve the existing BuzzingBrain identity, useful design decisions, working functionality, and established architecture. Do not replace the application with a generic dashboard, a starter template, a static website, or a new project that merely resembles the original.
+
+Improve the implementation wherever necessary while maintaining compatibility with the existing codebase.
+
+When a component already exists, improve it rather than creating a duplicate implementation. When a feature is incomplete, finish it using the existing architecture. When a feature is fundamentally broken, repair its underlying implementation instead of hiding the feature or displaying a fake success message.
+
+Maintain consistency across all pages. Changes to shared components, navigation, authentication, data models, and design tokens must be reflected throughout the application.
+
+Preserve existing user data and avoid destructive database changes. If a schema change is required, implement a safe migration and preserve compatibility with existing records.
+
+# 2. TRANSFORM THE NOTES SYSTEM INTO A TRUSTWORTHY EDUCATIONAL LIBRARY
+
+The notes section should become one of the strongest and most dependable parts of BuzzingBrain. Students should be able to select their class, subject, chapter, and learning objective and immediately access well-organized, readable, curriculum-aligned study material.
+
+Organize the library around the applicable NCERT and CBSE curricula for Classes 9–12. Include Biology, Chemistry, and Physics wherever those subjects are applicable to the relevant class curriculum. Map relevant concepts to NEET and JEE preparation requirements and provide appropriate dropper revision pathways.
+
+Do not assume that every class has the same subject structure or that every topic belongs in every competitive examination. Maintain separate mappings for school curricula, NEET, JEE Main, JEE Advanced where applicable, and additional enrichment content.
+
+For every subject, create a coherent hierarchy of units, chapters, subtopics, learning objectives, notes, diagrams, solved examples, formulas, exercises, and revision material. Students must be able to navigate from a chapter overview to an individual concept without searching through unrelated material.
+
+Use official NCERT textbooks and relevant official syllabus documents as primary references. Preserve the relevant textbook edition and source information. Where applicable, align the material with the current official examination syllabus.
+
+The notes must contain meaningful educational explanations rather than short AI-generated summaries that omit important concepts. Include definitions, conceptual explanations, worked examples, important statements, derivations, diagrams, equations, and examination-relevant practice where appropriate.
+
+For Chemistry, ensure that chemical equations, reaction conditions, mechanisms where relevant, nomenclature, structures, formulae, and numerical calculations are rendered correctly.
+
+For Physics, ensure that equations, derivations, assumptions, vector notation, units, sign conventions, diagrams, and numerical solutions are internally consistent.
+
+For Biology, ensure that anatomical structures, cell diagrams, labels, biological terminology, physiological processes, and descriptions are scientifically accurate.
+
+Do not invent textbook quotations, page references, scientific facts, or citations. When authoritative source material is unavailable, mark the content as requiring verification rather than claiming that it has been verified.
+
+## Handwritten notes appearance
+
+The notes should resemble carefully prepared student notebooks, with realistic handwritten-style headings, natural spacing, appropriate margins, consistent page composition, highlighted definitions, underlined keywords, formula boxes, and readable explanations.
+
+Use handwritten-style fonts or rendering methods that preserve legibility. Avoid excessive decorative handwriting, random rotations, inconsistent font sizes, and layouts that make scientific content difficult to read.
+
+Diagrams must resemble educational notebook diagrams where appropriate, rather than unrelated stock illustrations. Each diagram must have correct labels, pointers, captions, proportions, and placement within the explanation.
+
+Preserve the correctness of subscripts, superscripts, fractions, mathematical symbols, Greek letters, reaction arrows, units, and chemical notation. Do not convert important equations into blurry images when a crisp mathematical rendering is possible.
+
+Provide consistent page numbering, sensible page breaks, chapter navigation, search, bookmarks, recently viewed notes, downloads, and continuation from the last reading position.
+
+The library should make it obvious which content is complete, which content is available for revision, and which material is awaiting subject-matter verification.
+
+# 3. BUILD A COMPLETE STUDENT LEARNING WORKFLOW
+
+The application must guide students through a natural sequence of learning rather than leaving them to navigate disconnected modules.
+
+When a student opens a chapter, the application should present a useful chapter overview, the relevant notes, key concepts, learning objectives, and suggested activities.
+
+From the chapter, the student should be able to open a detailed explanation, ask the AI tutor a question about the current concept, practise related MCQs, review incorrect answers, and continue to a relevant practical or video lesson when available.
+
+After completing an activity, the application should save the student's progress and make it possible to resume later without losing work.
+
+The dashboard should recommend the next useful action based on the student's actual progress, selected goals, weak topics, and upcoming examinations. It should not display arbitrary recommendations or fabricated completion percentages.
+
+Keep the primary learning actions obvious. Students should not need to navigate through multiple unrelated pages just to continue studying a chapter.
+
+# 4. IMPROVE THE ENTIRE HANDWRITTEN NOTES LIBRARY EXPERIENCE
+
+Connect the notes library to the actual curriculum data and existing backend.
+
+Provide class selection, subject filters, chapter search, favorites, recent activity, completion status, and relevant examination tags.
+
+When a student selects a chapter, open the correct notes rather than a placeholder or generic document. Ensure that changing the selected class or subject updates the available chapters and content appropriately.
+
+Implement reliable bookmarks and reading-position persistence. Support downloads and printing where the current architecture allows them. Ensure that notes remain readable on small screens and that important equations and diagrams do not overflow the page.
+
+Improve the existing notes-generation workflow so that source content is preserved, generated material is reviewed appropriately, and missing sections are not silently omitted.
+
+Where AI is used to generate notes, validate the output structure and check for missing headings, malformed equations, duplicated paragraphs, unsupported citations, and inconsistent terminology before publishing the content.
+
+Do not fabricate content merely to make every chapter appear complete.
+
+# 5. TRANSFORM THE VIRTUAL LAB INTO A GENUINE INTERACTIVE LEARNING ENVIRONMENT
+
+Upgrade the existing virtual laboratory rather than building a separate application that does not share student progress, curriculum data, or the existing design system.
+
+The laboratory should support the relevant Biology, Chemistry, and Physics topics and practicals across Classes 9–12, with suitable concept-revision pathways for NEET, JEE, and dropper students.
+
+Organize the experiments by subject, class, chapter, practical category, difficulty, and learning objective.
+
+Each experiment should begin with an introduction explaining what the student is going to learn and why the experiment matters. Present the relevant theory, apparatus, materials, procedure, equations, and safety precautions before the interactive activity begins.
+
+The main simulation must be genuinely interactive. Students should be able to manipulate relevant apparatus, adjust experimental variables, select materials where appropriate, observe changes, collect readings, and understand the relationship between their actions and the resulting scientific observations.
+
+For example, a physics experiment involving electrical circuits should allow the student to change relevant circuit parameters and observe corresponding electrical behavior. A chemistry experiment should model the relevant chemical relationships and observations. A biology practical should explain the biological structures or processes being studied and provide meaningful interactions with the relevant models or specimens.
+
+These are examples of the required level of interaction, not permission to use generic simulations for every experiment.
+
+Each practical must include an observation table, appropriate measurements and units, calculations, graphs where relevant, interpretation of results, common experimental errors, and a final conclusion.
+
+Add post-practical MCQs, viva questions, and a report containing the experiment title, objective, procedure, observations, calculations, result, and relevant precautions. Save completed practicals and allow students to resume incomplete experiments.
+
+For 3D models, improve geometry, lighting, camera controls, zoom, object selection, labels, annotations, and performance. Every labelled part must have a relevant explanation connected to the selected object.
+
+Use scientifically meaningful simulations instead of random animations or arbitrary values. Make assumptions and limitations visible when an experiment is simulated.
+
+Do not claim that a virtual demonstration replaces physical laboratory training or safety supervision.
+
+Implement a smaller set of complete practicals first where necessary, then expand the catalogue using the same reusable experiment architecture.
+
+# 6. MAKE THE EXAMINATION SYSTEM RELIABLE AND EDUCATIONALLY USEFUL
+
+Improve the existing chapter tests, subject tests, timed examinations, mock tests, CBT interface, and OMR-style workflows.
+
+Students must be able to select answers, navigate between questions, revisit unanswered questions, mark questions for review, and submit their attempts according to the selected examination rules.
+
+The timer must behave consistently. Selected answers must not disappear unexpectedly when the student changes questions or refreshes the page. Submitting an examination must calculate the result correctly and prevent duplicate submissions from corrupting the score.
+
+Implement the applicable marking scheme for the selected examination. Do not apply negative marking to every test by default.
+
+After submission, display a clear result summary with marks, accuracy, attempted and unattempted questions, time usage, subject-wise performance, chapter-wise strengths, and weak concepts where the available data supports those calculations.
+
+Every question must have a clear stem, valid options, a correct answer, and a meaningful explanation. Explanations should teach the concept rather than simply repeat the answer.
+
+Where useful, explain why each incorrect option is wrong. Link explanations to the corresponding notes and revision resources.
+
+Check the question bank for duplicates, ambiguity, scientific errors, out-of-syllabus content, and inconsistent difficulty labels. AI-generated questions must not be treated as verified merely because they are formatted correctly.
+
+Create a mistake notebook that saves incorrect answers, explains the underlying misconception, and allows students to retry similar questions after reviewing the relevant material.
+
+Connect examination results to the revision planner and dashboard so that students can act on their performance.
+
+# 7. MAKE THE AI TUTOR A CONTEXT-AWARE LEARNING ASSISTANT
+
+Improve the existing AI tutor without replacing the current provider or API architecture unnecessarily.
+
+The tutor should understand the selected class, subject, chapter, and learning context. When a student asks a question from a chapter, the tutor should prioritize the relevant textbook content and available verified learning resources.
+
+Provide clear explanations, simplified descriptions, step-by-step solutions, worked examples, analogies, and additional practice questions where appropriate.
+
+The tutor should adapt explanations to the student's learning level and use correct scientific terminology. It should distinguish established textbook facts from interpretations or additional enrichment material.
+
+When references are displayed, they must correspond to actual source material. The tutor must not invent NCERT page numbers, textbook quotations, or official syllabus claims.
+
+If the available information is insufficient to answer reliably, the tutor should acknowledge the limitation rather than confidently generating unsupported content.
+
+Connect the tutor to the rest of the application. Students should be able to move from a tutor explanation to the corresponding notes, practice questions, or practical activities.
+
+Validate AI responses before rendering them. Handle malformed output, API failures, timeouts, rate limits, and temporary service outages with clear messages and useful recovery options.
+
+Keep API keys and other credentials on the server. Reuse existing environment variable conventions where practical and avoid unnecessary provider migrations.
+
+# 8. UPGRADE THE EDUCATIONAL VIDEO GENERATION SYSTEM
+
+Improve the existing AI video studio and rendering pipeline so that generated educational videos are coherent, accurate, engaging, and technically valid.
+
+Each lesson should have a clear learning objective, an appropriate sequence of scenes, relevant narration, meaningful scientific visuals, and a concise conclusion.
+
+Synchronize narration with the displayed animation and captions. Avoid scenes that show unrelated visuals while the narration explains a different concept.
+
+Use appropriate scientific diagrams, anatomical models, molecular representations, equations, labels, and animated processes according to the topic.
+
+Support the existing portrait and landscape formats. Preserve aspect ratios, readable text, appropriate resolution, clear audio, and consistent visual styling.
+
+Do not replace every requested animation with a static slide. Use actual animation when the current renderer and assets support it, and make the difference between animated and static content clear.
+
+Improve video-job progress reporting and error handling. A failed render should not be shown as completed. Interrupted jobs should be recoverable when feasible.
+
+Validate the generated media before marking a job successful. Ensure that the output has a valid video stream, the expected dimensions, appropriate audio, and usable playback duration.
+
+Persist job metadata and use durable storage for generated videos in production. Avoid relying on temporary local files or in-memory job records that disappear after a server restart.
+
+# 9. CREATE A MEANINGFUL PERSONALIZED STUDY PLANNER
+
+Improve the existing dashboard, planner, and progress-tracking systems.
+
+Allow students to select their class, subjects, examination goals, available study time, and target dates.
+
+Build schedules from the actual curriculum and available study material. Include learning, practice, revision, mock tests, and appropriate spaced-repetition intervals.
+
+Make the planner reflect completed work and current progress. If a student misses a session, allow the schedule to be adjusted without unnecessarily discarding the rest of the plan.
+
+Show completed chapters, chapters requiring revision, recurring mistakes, recent performance, and the next recommended action.
+
+Recommendations should be based on persisted data rather than fabricated scores or arbitrary progress values.
+
+Use official examination dates only when reliable information is available. Clearly identify provisional dates rather than presenting estimates as confirmed announcements.
+
+Avoid guaranteeing NEET or JEE ranks or predicted examination scores.
+
+# 10. IMPROVE THE DESIGN AND USER EXPERIENCE ACROSS EVERY PAGE
+
+Preserve the existing BuzzingBrain visual identity while making the interface more polished, consistent, and easy to use.
+
+Improve typography, spacing, component hierarchy, colors, contrast, responsive layouts, page transitions, and visual consistency.
+
+Use the existing design language rather than applying a completely unrelated template. Reuse shared components and design tokens so that updates remain consistent throughout the application.
+
+The dashboard should emphasize learning progress, upcoming study activities, weak topics, and the most useful next action. Avoid overcrowding it with redundant cards, decorative charts, and unrelated features.
+
+Make navigation understandable for new users. Every important page should explain what it does and what the student can do next.
+
+Use clear loading states, skeletons, empty states, error messages, and success feedback. Avoid blank screens, confusing error messages, and fake notifications.
+
+Ensure that forms provide validation and useful feedback. Buttons must communicate their actions and respond correctly to user interaction.
+
+Make the interface accessible through keyboard navigation, screen readers, appropriate contrast, readable text, adjustable text size, and reduced-motion preferences.
+
+Optimize mobile and tablet layouts. Important controls should be touch-friendly, content should not overflow, and diagrams, notes, tests, and 3D activities should remain usable on smaller screens.
+
+Animations and visual effects should improve comprehension and engagement without distracting students or reducing performance.
+
+# 11. FIX BACKEND, DATABASE, AND APPLICATION RELIABILITY
+
+Complete the existing backend integrations and ensure that frontend behavior reflects actual server and database operations.
+
+Repair broken API requests, incorrect data models, missing fields, invalid queries, inconsistent response handling, and incomplete persistence.
+
+Preserve existing authentication and database integrations unless a genuine defect requires a carefully managed change.
+
+Ensure that each user can access only the information and actions permitted by their role. Enforce authorization in backend endpoints and database rules rather than relying exclusively on hidden frontend controls.
+
+Validate uploaded files, request parameters, user-generated content, and external service responses. Protect sensitive information and keep credentials out of client bundles.
+
+Use appropriate error handling, structured logging, resource limits, and rate limits.
+
+Ensure that long-running operations such as video rendering can continue reliably without blocking ordinary application requests. Store job status and generated assets using durable production-compatible storage.
+
+Improve database consistency for scores, attempts, progress, notes, and settings. Prevent duplicate requests from creating inconsistent records.
+
+Do not weaken authentication, security rules, or validation to make a feature appear functional.
+
+# 12. IMPROVE PERFORMANCE WITHOUT SACRIFICING FUNCTIONALITY
+
+Make BuzzingBrain responsive on ordinary student laptops, tablets, and mobile devices.
+
+Load heavy 3D scenes, video tools, and AI-related modules only when required. Optimize images, textures, geometry, rendering loops, component rendering, and large dependencies.
+
+Use code splitting and lazy loading where appropriate. Avoid repeatedly fetching unchanged curriculum data and avoid unnecessary database requests.
+
+Ensure that large notes and chapter libraries remain navigable. Provide appropriate fallbacks when a device cannot support advanced graphics.
+
+Improve offline support for previously saved notes and relevant learning records. Preserve local progress and synchronize changes safely when the connection returns, while handling conflicting updates appropriately.
+
+Do not remove valuable functionality simply to reduce bundle size.
+
+# 13. CONNECT ALL FEATURES INTO ONE COHERENT PLATFORM
+
+The notes library, AI tutor, tests, practicals, videos, planner, and dashboard must share consistent curriculum identifiers and student progress wherever appropriate.
+
+A student should be able to move from a concept explanation to its notes, from notes to a test, from a wrong answer to revision, and from a practical to its saved report without losing context.
+
+Avoid duplicate implementations of the same functionality. Reuse shared services, content models, and reusable components.
+
+Make progress indicators reflect actual saved records. Ensure that a completed test updates the relevant dashboard data, an opened chapter appears in recent activity, and a completed practical updates the student's learning history.
+
+Keep navigation, terminology, visual styling, and interaction patterns consistent throughout the application.
+
+# 14. IMPLEMENT THE CHANGES DIRECTLY
+
+Start modifying the existing repository immediately after understanding its structure.
+
+Implement the improvements across the actual source files, frontend components, backend services, database models, content definitions, configuration, and styles as needed.
+
+Do not stop after inspecting the code. Do not deliver only recommendations, mockups, documentation, or a checklist. Do not wait for me to approve individual phases.
+
+Make sensible decisions, reuse existing dependencies where possible, and complete related work together so that the final application remains coherent.
+
+Focus on implementation rather than lengthy testing reports or repeated audits. Use targeted checks when necessary to avoid introducing obvious regressions, but do not allow testing documentation to replace actual development work.
+
+If credentials or external access are missing, complete the implementation that does not depend on them and clearly identify the remaining configuration requirement. Never pretend that an unavailable external integration has succeeded.
+
+If a task is too large for one execution, continue working through the remaining implementation tasks instead of stopping after a few files or a superficial redesign.
+
+# 15. FINAL EXPECTATION
+
+The final result must be the upgraded BuzzingBrain application in the existing repository.
+
+It should provide a polished student experience, accurate and well-organized learning content, realistic handwritten notes, functional examination workflows, meaningful virtual practicals, useful AI tutoring, reliable video generation, personalized revision, secure persistence, responsive UI/UX, and consistent integration across all major modules.
+
+Do not claim that missing chapters, broken integrations, or incomplete features have been completed unless the corresponding implementation actually exists.
+
+**The priority is to improve the application itself. Start coding, complete the existing features, improve the weak areas, connect all modules, and deliver the most complete and reliable version of BuzzingBrain possible without rebuilding it from scratch.**

@@ -1,0 +1,587 @@
+{
+  "classes": [
+    {
+      "id": "cls-10-a",
+      "name": "Class 10",
+      "section": "A",
+      "gradeLevel": "Class 10",
+      "stream": "General Secondary",
+      "assignedTeacherIds": [
+        "teacher_1",
+        "teacher_default"
+      ],
+      "classTeacherId": "teacher_1",
+      "roomNumber": "Room 204 (Aryabhata Wing)",
+      "academicYear": "2026-2027"
+    },
+    {
+      "id": "cls-10-b",
+      "name": "Class 10",
+      "section": "B",
+      "gradeLevel": "Class 10",
+      "stream": "General Secondary",
+      "assignedTeacherIds": [
+        "teacher_1"
+      ],
+      "classTeacherId": "teacher_1",
+      "roomNumber": "Room 205 (Aryabhata Wing)",
+      "academicYear": "2026-2027"
+    },
+    {
+      "id": "cls-11-pcm",
+      "name": "Class 11",
+      "section": "PCM-1",
+      "gradeLevel": "Class 11",
+      "stream": "Science (Physics, Chemistry, Maths)",
+      "assignedTeacherIds": [
+        "teacher_1",
+        "teacher_2",
+        "teacher_default"
+      ],
+      "classTeacherId": "teacher_2",
+      "roomNumber": "Lab Complex 3 (Ramanujan Block)",
+      "academicYear": "2026-2027"
+    },
+    {
+      "id": "cls-12-pcb",
+      "name": "Class 12",
+      "section": "PCB-1",
+      "gradeLevel": "Class 12",
+      "stream": "Science (Physics, Chemistry, Biology)",
+      "assignedTeacherIds": [
+        "teacher_1",
+        "teacher_3",
+        "teacher_default"
+      ],
+      "classTeacherId": "teacher_3",
+      "roomNumber": "BioLab 2 (Homi Bhabha Wing)",
+      "academicYear": "2026-2027"
+    },
+    {
+      "id": "cls-9-a",
+      "name": "Class 9",
+      "section": "A",
+      "gradeLevel": "Class 9",
+      "stream": "Foundational Secondary",
+      "assignedTeacherIds": [
+        "teacher_1",
+        "teacher_default"
+      ],
+      "classTeacherId": "teacher_1",
+      "roomNumber": "Room 102 (Tagore Hall)",
+      "academicYear": "2026-2027"
+    }
+  ],
+  "students": [
+    {
+      "id": "std_1001",
+      "admissionNumber": "BB-2026-1042",
+      "rollNumber": 1,
+      "fullName": "Aarav Sharma",
+      "email": "aarav.sharma@buzzingbrain.edu",
+      "classId": "cls-10-a",
+      "gradeLevel": "Class 10",
+      "section": "A",
+      "attendancePercentage": 94.5,
+      "overallGrade": "A+",
+      "status": "active",
+      "identifiedWeakAreas": [
+        "Ray Optics sign convention",
+        "Ohm’s law graphical error"
+      ]
+    },
+    {
+      "id": "std_1002",
+      "admissionNumber": "BB-2026-1043",
+      "rollNumber": 2,
+      "fullName": "Diya Patel",
+      "email": "diya.patel@buzzingbrain.edu",
+      "classId": "cls-10-a",
+      "gradeLevel": "Class 10",
+      "section": "A",
+      "attendancePercentage": 91,
+      "overallGrade": "A",
+      "status": "active"
+    },
+    {
+      "id": "std_1003",
+      "admissionNumber": "BB-2026-1044",
+      "rollNumber": 3,
+      "fullName": "Rohan Verma",
+      "email": "rohan.verma@buzzingbrain.edu",
+      "classId": "cls-10-a",
+      "gradeLevel": "Class 10",
+      "section": "A",
+      "attendancePercentage": 71.5,
+      "overallGrade": "C+",
+      "status": "active",
+      "identifiedWeakAreas": [
+        "Chemical Equations balancing",
+        "Respiration ATP yield"
+      ]
+    },
+    {
+      "id": "std_1004",
+      "admissionNumber": "BB-2026-1045",
+      "rollNumber": 4,
+      "fullName": "Ananya Iyer",
+      "email": "ananya.iyer@buzzingbrain.edu",
+      "classId": "cls-10-a",
+      "gradeLevel": "Class 10",
+      "section": "A",
+      "attendancePercentage": 96,
+      "overallGrade": "A+",
+      "status": "active"
+    },
+    {
+      "id": "std_1005",
+      "admissionNumber": "BB-2026-1046",
+      "rollNumber": 5,
+      "fullName": "Kabir Khan",
+      "email": "kabir.khan@buzzingbrain.edu",
+      "classId": "cls-10-a",
+      "gradeLevel": "Class 10",
+      "section": "A",
+      "attendancePercentage": 83.2,
+      "overallGrade": "B+",
+      "status": "active"
+    },
+    {
+      "id": "std_1006",
+      "admissionNumber": "BB-2026-1047",
+      "rollNumber": 6,
+      "fullName": "Ishaan Gupta",
+      "email": "ishaan.gupta@buzzingbrain.edu",
+      "classId": "cls-10-a",
+      "gradeLevel": "Class 10",
+      "section": "A",
+      "attendancePercentage": 68,
+      "overallGrade": "C",
+      "status": "active",
+      "identifiedWeakAreas": [
+        "Low attendance below 75%",
+        "Periodic trends in electro-negativity"
+      ]
+    },
+    {
+      "id": "std_1007",
+      "admissionNumber": "BB-2026-1048",
+      "rollNumber": 7,
+      "fullName": "Pooja Joshi",
+      "email": "pooja.joshi@buzzingbrain.edu",
+      "classId": "cls-10-a",
+      "gradeLevel": "Class 10",
+      "section": "A",
+      "attendancePercentage": 88,
+      "overallGrade": "B+",
+      "status": "active"
+    },
+    {
+      "id": "std_1008",
+      "admissionNumber": "BB-2026-1049",
+      "rollNumber": 8,
+      "fullName": "Tanvi Sen",
+      "email": "tanvi.sen@buzzingbrain.edu",
+      "classId": "cls-10-a",
+      "gradeLevel": "Class 10",
+      "section": "A",
+      "attendancePercentage": 92.5,
+      "overallGrade": "A",
+      "status": "active"
+    },
+    {
+      "id": "std_1101",
+      "admissionNumber": "BB-2025-0812",
+      "rollNumber": 1,
+      "fullName": "Devansh Kulkarni",
+      "email": "devansh.kulkarni@buzzingbrain.edu",
+      "classId": "cls-11-pcm",
+      "gradeLevel": "Class 11",
+      "section": "PCM-1",
+      "attendancePercentage": 95,
+      "overallGrade": "A+",
+      "status": "active"
+    },
+    {
+      "id": "std_1102",
+      "admissionNumber": "BB-2025-0815",
+      "rollNumber": 2,
+      "fullName": "Meera Nambiar",
+      "email": "meera.nambiar@buzzingbrain.edu",
+      "classId": "cls-11-pcm",
+      "gradeLevel": "Class 11",
+      "section": "PCM-1",
+      "attendancePercentage": 89.5,
+      "overallGrade": "A",
+      "status": "active"
+    },
+    {
+      "id": "std_1201",
+      "admissionNumber": "BB-2024-0410",
+      "rollNumber": 1,
+      "fullName": "Siddharth Rao",
+      "email": "siddharth.rao@buzzingbrain.edu",
+      "classId": "cls-12-pcb",
+      "gradeLevel": "Class 12",
+      "section": "PCB-1",
+      "attendancePercentage": 93,
+      "overallGrade": "A",
+      "status": "active"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "ses_20261026_10a_sci",
+      "classId": "cls-10-a",
+      "subjectName": "Science",
+      "teacherId": "teacher_1",
+      "teacherName": "Dr. Anjali Deshmukh",
+      "date": "2026-10-26",
+      "startTime": "09:00",
+      "endTime": "09:45",
+      "title": "Life Processes: Respiration & Double Circulation",
+      "status": "completed",
+      "finalized": true,
+      "markedBy": "teacher_1",
+      "markedAt": "2026-10-26T09:48:12.000Z",
+      "attendanceRecords": [
+        {
+          "studentId": "std_1001",
+          "studentName": "Aarav Sharma",
+          "rollNumber": 1,
+          "status": "present"
+        },
+        {
+          "studentId": "std_1002",
+          "studentName": "Diya Patel",
+          "rollNumber": 2,
+          "status": "present"
+        },
+        {
+          "studentId": "std_1003",
+          "studentName": "Rohan Verma",
+          "rollNumber": 3,
+          "status": "late",
+          "remarks": "Late by 10 mins (Bus delay)"
+        },
+        {
+          "studentId": "std_1004",
+          "studentName": "Ananya Iyer",
+          "rollNumber": 4,
+          "status": "present"
+        },
+        {
+          "studentId": "std_1005",
+          "studentName": "Kabir Khan",
+          "rollNumber": 5,
+          "status": "present"
+        },
+        {
+          "studentId": "std_1006",
+          "studentName": "Ishaan Gupta",
+          "rollNumber": 6,
+          "status": "absent",
+          "remarks": "Unexcused"
+        },
+        {
+          "studentId": "std_1007",
+          "studentName": "Pooja Joshi",
+          "rollNumber": 7,
+          "status": "present"
+        },
+        {
+          "studentId": "std_1008",
+          "studentName": "Tanvi Sen",
+          "rollNumber": 8,
+          "status": "present"
+        }
+      ]
+    },
+    {
+      "id": "ses_20261027_10a_sci",
+      "classId": "cls-10-a",
+      "subjectName": "Science",
+      "teacherId": "teacher_1",
+      "teacherName": "Dr. Anjali Deshmukh",
+      "date": "2026-10-27",
+      "startTime": "09:00",
+      "endTime": "09:45",
+      "title": "Electricity: Ohm’s Law & Resistor Networks",
+      "status": "completed",
+      "finalized": false,
+      "markedBy": "teacher_1",
+      "markedAt": "2026-10-27T09:44:00.000Z",
+      "attendanceRecords": [
+        {
+          "studentId": "std_1001",
+          "studentName": "Aarav Sharma",
+          "rollNumber": 1,
+          "status": "present"
+        },
+        {
+          "studentId": "std_1002",
+          "studentName": "Diya Patel",
+          "rollNumber": 2,
+          "status": "present"
+        },
+        {
+          "studentId": "std_1003",
+          "studentName": "Rohan Verma",
+          "rollNumber": 3,
+          "status": "absent"
+        },
+        {
+          "studentId": "std_1004",
+          "studentName": "Ananya Iyer",
+          "rollNumber": 4,
+          "status": "present"
+        },
+        {
+          "studentId": "std_1005",
+          "studentName": "Kabir Khan",
+          "rollNumber": 5,
+          "status": "present"
+        },
+        {
+          "studentId": "std_1006",
+          "studentName": "Ishaan Gupta",
+          "rollNumber": 6,
+          "status": "late"
+        },
+        {
+          "studentId": "std_1007",
+          "studentName": "Pooja Joshi",
+          "rollNumber": 7,
+          "status": "present"
+        },
+        {
+          "studentId": "std_1008",
+          "studentName": "Tanvi Sen",
+          "rollNumber": 8,
+          "status": "present"
+        }
+      ]
+    },
+    {
+      "id": "ses_20261027_11pcm_phy",
+      "classId": "cls-11-pcm",
+      "subjectName": "Physics",
+      "teacherId": "teacher_1",
+      "teacherName": "Dr. Anjali Deshmukh",
+      "date": "2026-10-27",
+      "startTime": "11:00",
+      "endTime": "12:00",
+      "title": "Rotational Dynamics: Moment of Inertia & Torque",
+      "status": "scheduled",
+      "finalized": false,
+      "attendanceRecords": []
+    }
+  ],
+  "corrections": [
+    {
+      "id": "corr_1",
+      "sessionId": "ses_20261026_10a_sci",
+      "classId": "cls-10-a",
+      "studentId": "std_1002",
+      "studentName": "Diya Patel",
+      "previousStatus": "absent",
+      "newStatus": "present",
+      "correctedBy": "teacher_1",
+      "correctedByEmail": "anjali.deshmukh@buzzingbrain.edu",
+      "reason": "Student arrived during roll-call second verification after lab equipment issue",
+      "timestamp": "2026-10-26T10:15:20.000Z"
+    }
+  ],
+  "assessments": [
+    {
+      "id": "asm_101",
+      "title": "Life Processes Respiration & Blood Circulation Assessment",
+      "classId": "cls-10-a",
+      "subject": "Science",
+      "chapter": "Life Processes",
+      "type": "chapter_test",
+      "maxMarks": 50,
+      "passMarks": 20,
+      "durationMinutes": 45,
+      "assignedDate": "2026-10-20",
+      "dueDate": "2026-10-25",
+      "createdBy": "teacher_1",
+      "status": "completed",
+      "published": true,
+      "questionCount": 15
+    },
+    {
+      "id": "asm_102",
+      "title": "Ohm’s Law & Circuit Analysis Practical Assessment",
+      "classId": "cls-10-a",
+      "subject": "Science",
+      "chapter": "Electricity",
+      "type": "practical_quiz",
+      "maxMarks": 30,
+      "passMarks": 12,
+      "durationMinutes": 30,
+      "assignedDate": "2026-10-24",
+      "dueDate": "2026-10-28",
+      "createdBy": "teacher_1",
+      "status": "active",
+      "published": false,
+      "questionCount": 10
+    }
+  ],
+  "submissions": [
+    {
+      "id": "sub_101_1001",
+      "assessmentId": "asm_101",
+      "studentId": "std_1001",
+      "studentName": "Aarav Sharma",
+      "rollNumber": 1,
+      "submittedAt": "2026-10-24T14:20:00.000Z",
+      "status": "published",
+      "marksObtained": 48,
+      "maxMarks": 50,
+      "percentage": 96,
+      "autoGraded": true,
+      "teacherFeedback": "Outstanding anatomical clarity in cardiac chamber description.",
+      "gradedBy": "teacher_1",
+      "gradedAt": "2026-10-25T09:00:00.000Z"
+    },
+    {
+      "id": "sub_101_1002",
+      "assessmentId": "asm_101",
+      "studentId": "std_1002",
+      "studentName": "Diya Patel",
+      "rollNumber": 2,
+      "submittedAt": "2026-10-24T15:10:00.000Z",
+      "status": "published",
+      "marksObtained": 44,
+      "maxMarks": 50,
+      "percentage": 88,
+      "autoGraded": true,
+      "teacherFeedback": "Good conceptual grasp; review anaerobic fermentation equation.",
+      "gradedBy": "teacher_1",
+      "gradedAt": "2026-10-25T09:10:00.000Z"
+    },
+    {
+      "id": "sub_101_1003",
+      "assessmentId": "asm_101",
+      "studentId": "std_1003",
+      "studentName": "Rohan Verma",
+      "rollNumber": 3,
+      "submittedAt": "2026-10-24T16:00:00.000Z",
+      "status": "published",
+      "marksObtained": 28,
+      "maxMarks": 50,
+      "percentage": 56,
+      "autoGraded": true,
+      "teacherFeedback": "Needs revision of ATP yield in glycolysis vs citric acid cycle.",
+      "gradedBy": "teacher_1",
+      "gradedAt": "2026-10-25T09:20:00.000Z"
+    },
+    {
+      "id": "sub_102_1001",
+      "assessmentId": "asm_102",
+      "studentId": "std_1001",
+      "studentName": "Aarav Sharma",
+      "rollNumber": 1,
+      "submittedAt": "2026-10-26T17:00:00.000Z",
+      "status": "submitted",
+      "maxMarks": 30,
+      "autoGraded": false
+    },
+    {
+      "id": "sub_102_1002",
+      "assessmentId": "asm_102",
+      "studentId": "std_1002",
+      "studentName": "Diya Patel",
+      "rollNumber": 2,
+      "submittedAt": "2026-10-26T17:15:00.000Z",
+      "status": "submitted",
+      "maxMarks": 30,
+      "autoGraded": false
+    },
+    {
+      "id": "sub_102_1004",
+      "assessmentId": "asm_102",
+      "studentId": "std_1004",
+      "studentName": "Ananya Iyer",
+      "rollNumber": 4,
+      "submittedAt": "2026-10-26T17:30:00.000Z",
+      "status": "submitted",
+      "maxMarks": 30,
+      "autoGraded": false
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif_1",
+      "targetRole": "teacher",
+      "type": "grading_required",
+      "title": "3 New Submissions Ready for Evaluation",
+      "message": "Practical Assessment: \"Ohm’s Law & Circuit Analysis\" has 3 pending submissions awaiting teacher review.",
+      "classId": "cls-10-a",
+      "createdAt": "2026-10-26T18:00:00.000Z",
+      "read": false
+    },
+    {
+      "id": "notif_2",
+      "targetRole": "teacher",
+      "type": "attendance_alert",
+      "title": "Attendance Draft Pending Finalization",
+      "message": "Today’s session \"Electricity: Ohm’s Law & Resistor Networks\" has attendance saved as draft and needs final sign-off.",
+      "classId": "cls-10-a",
+      "createdAt": "2026-10-27T09:50:00.000Z",
+      "read": false
+    },
+    {
+      "id": "notif_3",
+      "targetRole": "admin",
+      "type": "support_needed",
+      "title": "Academic Alert: Ishaan Gupta (Roll 6)",
+      "message": "Student attendance dropped to 68.0% (below mandated 75% CBSE threshold). Action recommended.",
+      "classId": "cls-10-a",
+      "createdAt": "2026-10-26T10:00:00.000Z",
+      "read": false
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "audit_init_1",
+      "actorId": "admin_root",
+      "actorEmail": "admin@buzzingbrain.edu",
+      "actorRole": "admin",
+      "action": "ACADEMIC_POLICY_INITIALIZED",
+      "entityType": "policy",
+      "entityId": "global_settings",
+      "newValue": {
+        "minAttendance": 75,
+        "passMarks": 40
+      },
+      "reason": "Board examination compliance standard initialized for 2026-2027",
+      "timestamp": "2026-10-01T08:00:00.000Z"
+    },
+    {
+      "id": "audit_att_1",
+      "actorId": "teacher_1",
+      "actorEmail": "anjali.deshmukh@buzzingbrain.edu",
+      "actorRole": "teacher",
+      "action": "ATTENDANCE_CORRECTED",
+      "entityType": "attendance",
+      "entityId": "ses_20261026_10a_sci/std_1002",
+      "previousValue": "absent",
+      "newValue": "present",
+      "reason": "Student arrived during roll-call second verification after lab equipment issue",
+      "timestamp": "2026-10-26T10:15:20.000Z"
+    }
+  ],
+  "settings": {
+    "institutionName": "BuzzingBrain Vidyapeeth Academy",
+    "academicYear": "2026-2027",
+    "minimumAttendancePercentage": 75,
+    "passingGradePercentage": 40,
+    "autoPublishAutoGraded": false,
+    "allowTeacherCorrectionsDays": 7,
+    "graceLateMinutes": 15,
+    "updatedAt": "2026-10-01T08:00:00.000Z",
+    "updatedBy": "admin@buzzingbrain.edu"
+  }
+}

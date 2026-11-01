@@ -1,0 +1,608 @@
+# MASTER FULL-STACK DEVELOPMENT PROMPT
+## AI-Powered Handwritten Notes & Academic Learning Platform — Sarve Vidhya
+
+Act as a senior full-stack software engineer, AI application architect, educational content specialist, digital handwriting rendering engineer, database architect, and academic quality auditor.
+
+Your task is to thoroughly inspect, improve, and complete the existing Sarve Vidhya application. Build a fully functional, production-oriented educational platform that generates comprehensive, academically accurate study notes in the style of ChatGPT explanations, but visually presented as realistic handwritten notebook notes.
+
+The platform must combine the explanatory quality of ChatGPT, the visual appearance of handwritten school notes, the accuracy of NCERT and other reliable textbooks, a complete class-wise academic library, interactive handwritten diagrams, personalized student dashboards, and reliable examination reminders.
+
+This is a full-stack development task. Implement the frontend, backend, database models, AI integration, content verification, handwriting renderer, diagram engine, authentication, persistent storage, and automated testing. Do not deliver only a UI redesign, static prototype, mock API, or demonstration.
+
+**The primary objective is to generate notes that explain concepts as clearly as ChatGPT while looking as though a real student or teacher wrote them by hand in a notebook.**
+
+---
+
+# PART 1 — AUDIT AND UNDERSTAND THE EXISTING PROJECT
+
+Before making changes, inspect the complete repository, including the frontend, backend, package configuration, database connection, authentication, AI integrations, existing notes-generation logic, and deployment settings.
+
+Identify which features already work, which are incomplete, which contain errors, and which are merely visual placeholders.
+
+Preserve the existing application structure and working features wherever practical. Do not unnecessarily replace the existing framework, remove useful functionality, introduce duplicate services, or create a second incompatible database layer.
+
+Produce a brief implementation plan, then execute the work. Do not stop after presenting recommendations.
+
+The finished application must have working end-to-end flows, proper error handling, database persistence, responsive interfaces, and clear instructions for configuring environment variables and running the project.
+
+# PART 2 — BUILD AN AI NOTES GENERATION ENGINE
+
+Create a dedicated notes-generation engine that turns a student's topic, chapter, uploaded material, or selected syllabus section into comprehensive handwritten study notes.
+
+The notes must not be short generic summaries. They must explain the subject thoroughly, progressively, and accurately.
+
+## 2.1 Input methods
+
+Students must be able to generate notes by selecting a class, board, subject, chapter, and topic from the library, or by typing a topic directly into a prompt box.
+
+Support requests such as:
+
+- Explain the complete chapter in detailed handwritten notes.
+- Create revision notes for a particular topic.
+- Explain every NCERT exercise question step by step.
+- Make examination-focused notes for Class 10 Science.
+- Generate detailed Class 11 Biology notes with labeled handwritten diagrams.
+- Explain a difficult concept using simple language and real-life examples.
+- Convert an uploaded PDF or supported document into organized study notes.
+- Generate handwritten notes from a syllabus topic without inventing material outside the syllabus.
+
+When a student chooses an entire chapter, generate the complete chapter according to the relevant syllabus rather than returning only a brief overview.
+
+For large chapters, generate the notes in logically connected sections. Save each completed section and allow the student to continue generating the next section without losing previous work.
+
+## 2.2 ChatGPT-quality explanations
+
+The AI must write the notes as an excellent subject teacher would explain them to a student.
+
+Begin with a simple explanation of the concept, establish the necessary background, and gradually introduce more advanced details. Explain why a concept works, not just what it means.
+
+Use a natural teaching style that combines clear paragraphs, numbered steps, definitions, examples, comparisons, and relevant analogies. Explain technical terms when they first appear.
+
+When appropriate, include:
+
+- A simple definition followed by a detailed explanation.
+- The underlying scientific, mathematical, or logical principle.
+- Step-by-step derivations and calculations.
+- Worked examples with explanations for every step.
+- Relevant real-world applications.
+- Important differences between similar concepts.
+- Common misconceptions and examination mistakes.
+- Important facts and formulas to memorize.
+- NCERT-based questions with explained answers.
+- Short-answer and long-answer examination questions.
+- A concise revision summary at the end.
+
+Avoid repetitive introductions, unnecessary filler, artificial motivational sentences, and unexplained textbook jargon.
+
+Do not force every chapter into an identical template. Adapt the content structure to the topic and subject.
+
+For numerical subjects, show the formula, known values, substitution, calculation, units, and final answer. For Biology, explain structures, functions, mechanisms, and relationships. For History, organize events chronologically and explain causes and consequences. For Computer Science, include algorithms, examples, pseudocode, and diagrams where useful.
+
+## 2.3 Content completeness
+
+The generator must determine the relevant chapter topics before creating the notes.
+
+Create a chapter outline, map it to the official syllabus, and use that outline to generate the material section by section. Track which topics have been covered.
+
+The system must not claim that a chapter is complete if required sections are missing.
+
+Allow the student to choose between detailed learning notes, examination revision notes, and quick revision sheets. These must be genuinely different levels of detail rather than the same content with different headings.
+
+## 2.4 AI provider integration
+
+Implement a configurable AI service layer that can support the provider and model already used by the application, with the ability to change providers without rewriting the notes interface.
+
+Keep provider API keys exclusively on the server. Validate model responses, handle rate limits, retry temporary failures, and display useful error messages.
+
+Use structured content output for headings, paragraphs, equations, tables, diagram specifications, citations, and question sets. Validate the structure before saving it.
+
+Do not assume that AI-generated content is automatically accurate. Add a verification process before presenting content as verified NCERT-aligned material.
+
+# PART 3 — MAKE THE NOTES LOOK LIKE REAL HANDWRITING
+
+This is the defining feature of the platform.
+
+The system must create notes that look like carefully prepared handwritten notebook pages, not ordinary HTML paragraphs with a cursive font.
+
+## 3.1 Notebook appearance
+
+Render notes on realistic school notebook paper with subtle ruled lines, a natural left margin, handwritten headings, paragraphs, formulas, annotations, and page numbers.
+
+Use blue or black pen for normal writing, red pen for selected corrections or warnings, and restrained highlighting for important information.
+
+The handwriting should resemble human-written notes: natural character shapes, slightly varied letter spacing, small variations in baseline and stroke width, and realistic paragraph alignment.
+
+Keep the handwriting readable and consistent. Avoid exaggerated distortion, artificial random rotation, overly decorative fonts, or messy text that makes studying difficult.
+
+Provide a selection of handwriting styles, including neat student handwriting, clean teacher handwriting, and compact revision handwriting.
+
+Use subtle paper texture and natural ink rendering. The paper must remain clean and readable rather than appearing artificially aged or excessively textured.
+
+## 3.2 Genuine handwritten rendering
+
+Build a handwriting renderer that converts the structured content generated by the AI into visual notebook pages.
+
+The renderer must recognize the semantic role of each content element. A chapter heading, definition, paragraph, equation, table, diagram, and examination tip must not all be rendered in the same way.
+
+Use suitable handwriting fonts as a foundation, with controlled variation in character spacing, line spacing, word placement, and ink appearance. Where supported, use genuine stroke-based handwriting rendering for selected elements.
+
+Do not apply random transformations to entire paragraphs. Preserve readable text, mathematical alignment, and consistent page structure.
+
+The output must be actual readable text rendered in a handwritten visual style, not a flattened decorative image with inaccessible or unsearchable content.
+
+Maintain a structured content representation behind the rendered pages so that notes remain searchable, editable, accessible, and suitable for future regeneration.
+
+## 3.3 Page layout
+
+Build an intelligent notebook layout engine.
+
+Calculate the height of paragraphs, headings, formulas, tables, and diagrams before placing them on the page. Respect page margins and available width.
+
+When a section does not fit, move it to the next page naturally. Do not split a diagram, formula, or heading from its explanation in an awkward way.
+
+Prevent text from overlapping ruled lines in ways that reduce legibility. Maintain adequate space around headings and diagrams.
+
+Keep diagrams close to the explanations they support. Where a diagram needs more room, place it on a dedicated figure area or page.
+
+Support continuous scrolling, page-by-page viewing, zoom, printing, and high-resolution PDF export.
+
+The PDF output must preserve the handwriting appearance, diagram quality, page numbering, margins, and readable mathematical expressions.
+
+## 3.4 Real notebook conventions
+
+Use authentic educational note-taking conventions where appropriate:
+
+- Handwritten chapter and topic headings.
+- Underlined subheadings.
+- Definitions emphasized with boxes or margins.
+- Numbered steps for derivations.
+- Formulas written on separate lines.
+- Arrows connecting related ideas.
+- Small explanatory annotations.
+- Handwritten figure labels and captions.
+- Important examination points marked with restrained emphasis.
+- Worked examples separated from theoretical explanations.
+- Revision summaries at the end of a topic.
+
+These conventions must improve learning, not serve as random decoration.
+
+# PART 4 — BUILD A REAL HAND-DRAWN DIAGRAM GENERATOR
+
+Never substitute generic illustrations or stock artwork when a handwritten academic diagram is requested.
+
+Create a dedicated diagram-generation system that translates structured academic diagram specifications into genuine hand-drawn-style strokes, shapes, arrows, and labels.
+
+## 4.1 Diagram creation pipeline
+
+For each topic requiring a diagram, the AI must first determine what the diagram should communicate.
+
+It should generate a structured diagram specification containing the required components, their relationships, labels, connections, geometric constraints, and academic reference.
+
+A rendering engine should then construct the diagram using SVG paths, canvas strokes, or an appropriate graphics library.
+
+Apply controlled hand-drawn stroke variation to outlines and connectors while preserving the underlying scientific or mathematical geometry.
+
+Render labels in a matching handwritten style, but keep them readable and correctly positioned.
+
+The engine must not merely generate a text prompt and insert a random AI-generated image.
+
+## 4.2 Subject-specific accuracy
+
+For Biology, produce appropriate cell diagrams, organelles, tissue diagrams, anatomical structures, physiological systems, and other syllabus-relevant figures.
+
+For Physics, produce ray diagrams, circuit diagrams, force diagrams, experimental setups, graphs, and field representations.
+
+For Chemistry, produce chemical structures, electron-dot diagrams, reaction pathways, laboratory apparatus, and other suitable representations.
+
+For Mathematics, produce geometric constructions, graphs, coordinate diagrams, and mathematical figures with correct geometric relationships.
+
+For Computer Science, produce flowcharts, algorithm diagrams, database relationships, network topologies, and other technical figures.
+
+Do not force a diagram into a chapter if it does not help explain the content.
+
+## 4.3 Diagram positioning and labels
+
+Create a reliable diagram layout engine with anchor points, bounding boxes, leader-line routing, and collision detection.
+
+Labels must point to the correct components. Arrows must communicate the intended direction. Text must not overlap important structures, and the diagram must not extend beyond the page.
+
+On smaller screens, adapt the layout without breaking the relationships between labels and structures.
+
+Validate diagrams before publication. If automatic placement fails, retry layout or send the figure for editorial review.
+
+## 4.4 Interactive diagrams
+
+Where appropriate, allow students to zoom, pan, toggle labels, select structures, and reveal explanations.
+
+Provide a practice mode that hides selected labels so students can test themselves.
+
+When a student selects a label, highlight the corresponding structure and display its explanation.
+
+Allow authorized editors to adjust labels and positions without rebuilding the entire diagram manually.
+
+Maintain a structured, editable source for each diagram instead of saving only a flattened image.
+
+# PART 5 — CREATE A COMPLETE CLASS-WISE NOTES LIBRARY
+
+Build a persistent academic library that organizes content using this hierarchy:
+
+**Class → Board or curriculum → Subject → Syllabus edition → Chapter → Topic → Notes → Diagrams → Practice material.**
+
+Include support for Classes 6 through 12, with an architecture that can accommodate additional educational levels and entrance examinations.
+
+Do not assume that every class has the same subjects, chapters, or syllabus. Populate the library according to the relevant curriculum and verified syllabus documents.
+
+## 5.1 Library interface
+
+Create a dedicated library page where students can browse classes, subjects, chapters, and topics.
+
+Each class page must display available subjects. Each subject page must display the relevant chapters in syllabus order. Each chapter page must provide its notes, diagrams, explanations, and practice material.
+
+Provide search by chapter name, topic, keyword, and formula where feasible.
+
+Allow filtering by detailed notes, revision sheets, diagrams, solved examples, and practice questions.
+
+Add recently viewed chapters, saved notes, bookmarks, reading progress, and chapter completion indicators.
+
+Students should be able to return to the exact section or page they were studying.
+
+## 5.2 Chapter content management
+
+Every chapter must have a stable identifier and metadata containing its class, subject, curriculum, syllabus edition, source references, and verification status.
+
+Authorized editors must be able to create, edit, review, approve, publish, archive, and revise notes.
+
+Maintain version history. If a syllabus changes, identify affected chapters and flag them for review.
+
+Do not display a chapter as verified unless it has passed the appropriate checks.
+
+If content has not yet been prepared, display an honest preparation status instead of fabricated notes.
+
+# PART 6 — NCERT AND RELIABLE BOOK-BASED CONTENT
+
+Accuracy is mandatory. The platform must distinguish verified source material from AI-generated explanations that have not yet been reviewed.
+
+Use official NCERT textbooks, official CBSE syllabus documents, examination sample papers, and official examination notices as primary references when applicable.
+
+Supplement them with established subject references such as H. C. Verma for relevant Physics topics, Campbell Biology for supplementary Biology explanations, and appropriate standard Chemistry and Mathematics textbooks.
+
+Use official examination authority websites for dates and rules.
+
+The selected reference must match the student's class, subject, syllabus, and examination requirements.
+
+For every chapter, map topics to the relevant syllabus sections. Maintain references to the sources used, including edition or publication information where available.
+
+When the system has access to legitimate source documents, retrieve the relevant material and use it to ground the explanations. When it does not, clearly identify the limitation instead of pretending that the content was verified against a textbook.
+
+Do not fabricate quotations, textbook page numbers, official announcements, citations, or examination dates.
+
+Paraphrase educational content in original language. Respect copyright restrictions and do not reproduce entire textbooks or other protected works without authorization.
+
+Include a clear distinction between official syllabus coverage, supplementary explanations, and AI-generated examples.
+
+# PART 7 — FULL-STACK ARCHITECTURE AND DATABASE
+
+Implement the entire application as an integrated full-stack system.
+
+## 7.1 Frontend
+
+Retain the existing frontend framework wherever practical.
+
+Create reusable components for the notebook viewer, handwriting renderer, diagram viewer, chapter library, subject navigation, search, notes-generation form, progress tracker, user dashboard, and examination countdown.
+
+Use a consistent design system with responsive layouts, loading states, validation messages, and accessible controls.
+
+Do not put all application logic into a single oversized component.
+
+Keep API calls, UI components, state management, and rendering logic organized into appropriate modules.
+
+## 7.2 Backend
+
+Implement proper backend routes and services for:
+
+- Authentication and user profiles.
+- Academic classes, subjects, chapters, and syllabuses.
+- Notes generation and regeneration.
+- Saved notes and note versions.
+- Diagram specifications and diagram validation.
+- Source references and verification status.
+- Bookmarks and learning progress.
+- Exam calendars and reminder preferences.
+- Notifications and scheduled reminder delivery.
+- Administrative content review and publication.
+
+Validate all inputs on the server. Enforce authorization on protected endpoints. Apply rate limits to expensive AI-generation routes.
+
+Do not trust the frontend to determine a user's role, permissions, verification status, or access to protected content.
+
+## 7.3 MongoDB persistence
+
+Use MongoDB consistently if it is the database already selected for the application.
+
+Create appropriate models or collections for:
+
+- Users and profiles.
+- Classes, subjects, chapters, and syllabus versions.
+- Notes documents and generated sections.
+- Diagram specifications and validation results.
+- Source references and editorial reviews.
+- Bookmarks and learning progress.
+- Examination records and date-source metadata.
+- Reminder preferences and notification delivery status.
+
+Use stable identifiers, timestamps, schema validation, and appropriate indexes.
+
+Store structured note content separately from rendered files where appropriate. Store large generated documents or exports using a suitable file-storage mechanism rather than embedding unlimited binary data in ordinary user records.
+
+Persist generated notes so that students do not have to regenerate the same chapter every time they open it.
+
+Implement caching and deduplication for reusable, verified chapter content. User-specific edits and private notes must remain isolated.
+
+If the repository already uses another database, inspect its state and migration implications before changing it. Do not leave the application with two competing persistence systems.
+
+## 7.4 Security
+
+Keep API keys and database credentials in server-side environment variables.
+
+Implement secure authentication, password hashing where applicable, access control, input validation, safe file uploads, and appropriate session or token handling.
+
+Students must not be able to edit official published content or access another student's private notes.
+
+Protect uploaded files and prevent unauthorized access to generated exports.
+
+Provide an `.env.example` file with placeholder values only. Never commit real credentials.
+
+# PART 8 — PERSONALIZED HOME PAGE
+
+The home page must display a personalized greeting using the authenticated user's saved display name.
+
+For example, if the user is logged in as Rahul, display:
+
+**Hi, Rahul!**
+
+Below it, show a helpful message such as:
+
+"Continue learning where you left off, explore your next chapter, or revise an important concept."
+
+Do not hardcode a sample name. Retrieve the name from the authenticated user's profile and handle missing profile data gracefully.
+
+### For logged-out visitors
+
+Do not display a personalized greeting, a generic "Hi," or time-dependent greetings such as "Good morning" when there is no authenticated user.
+
+Instead, display a neutral welcome message such as:
+
+**Welcome to Sarve Vidhya**
+
+"Explore your subjects, create handwritten notes, and prepare for your upcoming examinations."
+
+Display an appropriate sign-in or registration option without preventing visitors from exploring permitted public content.
+
+After login, update the home page with the actual user's name and personalized information without requiring an unnecessary full-page reload.
+
+# PART 9 — VERIFIED 2027 BOARD AND COMPETITIVE-EXAM COUNTDOWN
+
+Create a dedicated examination calendar and countdown feature on the home page and dashboard.
+
+The countdown must use real examination records, not hardcoded numbers or invented dates.
+
+Support relevant 2027 examinations, including:
+
+- CBSE Class 10 Board Examinations.
+- CBSE Class 12 Board Examinations.
+- Relevant state board examinations.
+- JEE Main and JEE Advanced.
+- NEET-UG.
+- CUET-UG.
+- Other supported competitive or entrance examinations that the student chooses.
+
+Treat this as a configurable examination calendar, not a permanently hardcoded list.
+
+### A. Official date verification
+
+Retrieve examination dates from official board and examination-authority announcements whenever available.
+
+Store the examination name, year, applicable session, start date, end date if known, official source URL, date of verification, and publication or announcement status.
+
+Distinguish between confirmed dates, officially announced date ranges, tentative schedules, and dates that have not yet been announced.
+
+Do not fabricate an exact date when only an approximate examination window is available.
+
+If an official 2027 date has not been announced, display:
+
+"Official date not announced yet."
+
+If a reliable provisional schedule exists, label it clearly as provisional and show its source.
+
+Update records through an authorized process when official schedules change. Preserve previous values and record the change history.
+
+### B. Countdown display
+
+Each examination card should display:
+
+- Examination name.
+- Applicable year and session.
+- Confirmed examination date or known date range.
+- Days remaining, when a valid date is available.
+- Date verification status.
+- A link to the official examination notice.
+- An option to follow the examination.
+
+Calculate the countdown from the current date in the relevant examination's local time zone.
+
+Handle dates correctly across time zones and daylight-saving boundaries where relevant. For date-only examinations, calculate calendar days remaining rather than relying on arbitrary server timestamps.
+
+When an examination date changes, recalculate the countdown automatically.
+
+If the examination has started or finished, display the appropriate status instead of a negative countdown.
+
+### C. Personalized examination selection
+
+Allow students to select the examinations relevant to their goals.
+
+A Class 10 student should be able to follow their board examination without being forced to see unrelated entrance-exam countdowns.
+
+A Class 12 student preparing for NEET or JEE should be able to follow their board examinations and selected entrance examinations together.
+
+Provide controls to add, remove, reorder, and prioritize followed examinations.
+
+Save these preferences to the user's account.
+
+# PART 10 — FUNCTIONAL EXAMINATION REMINDERS
+
+The countdown must connect to a real reminder system.
+
+Allow students to choose reminder intervals, such as 90, 60, 30, 14, 7, 3, and 1 day before an examination, where applicable.
+
+Allow reminders for verified schedule changes, application deadlines, registration deadlines, admit-card announcements, and other important official milestones when those dates are available.
+
+Do not create a reminder for an unverified deadline as if it were official.
+
+The backend must store reminder preferences and calculate when notifications are due.
+
+Use a reliable scheduled job or managed scheduling service to process due reminders. Prevent duplicate delivery and track success or failure.
+
+Provide in-app notifications and support email or push notifications if the required services and permissions are configured.
+
+Clearly communicate which notification channels are enabled. Do not claim that an email or push reminder has been sent if delivery has not been confirmed.
+
+If a student changes their followed examinations or reminder preferences, update future reminders accordingly.
+
+If an examination date changes or a schedule is cancelled, update or cancel affected reminders and notify the student where appropriate.
+
+Support the student's time zone and preferred notification settings.
+
+# PART 11 — STUDENT DASHBOARD AND LEARNING PROGRESS
+
+Create a personalized dashboard that integrates the library, notes, and examination calendar.
+
+Show recently opened chapters, saved notes, bookmarked diagrams, unfinished chapters, and upcoming followed examinations.
+
+Track progress based on meaningful activities, such as sections read, notes completed, questions answered, and diagrams practiced.
+
+Do not increase progress simply because a page was opened.
+
+Allow students to resume their learning from the last saved position.
+
+Keep all user-specific progress in the database so that it remains available across sessions and devices.
+
+# PART 12 — PERFORMANCE, ACCESSIBILITY, AND RESPONSIVENESS
+
+Make the platform usable on desktop, tablet, and mobile devices.
+
+Optimize large notes documents and diagrams so that rendering a long chapter does not freeze the interface.
+
+Use pagination, lazy rendering, caching, and appropriate loading strategies where necessary.
+
+Ensure that searchable text remains available behind the handwriting-style presentation.
+
+Provide accessible labels, keyboard navigation, sufficient contrast, screen-reader-friendly content, and text-based alternatives to diagrams where appropriate.
+
+Support zooming without clipping content and preserve a readable layout on narrow screens.
+
+Use clear empty states, skeleton loading indicators, retry controls, and actionable error messages.
+
+Do not expose raw server errors, database credentials, API keys, or stack traces to students.
+
+# PART 13 — REQUIRED API AND BACKEND BEHAVIOR
+
+Create a consistent, documented API structure using the existing framework.
+
+The following are illustrative endpoint responsibilities; adapt their exact routes to the current application:
+
+- `GET /api/classes` — list available classes.
+- `GET /api/subjects` — retrieve subjects for a selected class and curriculum.
+- `GET /api/chapters` — retrieve the applicable chapter list.
+- `GET /api/chapters/:id` — retrieve chapter metadata and published content.
+- `POST /api/notes/generate` — generate notes for a validated topic or chapter.
+- `GET /api/notes/:id` — retrieve saved notes.
+- `PATCH /api/notes/:id` — update authorized editable notes.
+- `POST /api/notes/:id/regenerate` — regenerate a selected section.
+- `GET /api/notes/:id/diagrams` — retrieve associated diagrams.
+- `POST /api/diagrams/:id/validate` — validate a diagram specification.
+- `GET /api/exams` — retrieve supported examination records.
+- `GET /api/exams/followed` — retrieve the authenticated user's followed examinations.
+- `PUT /api/exams/followed` — update examination preferences.
+- `GET /api/reminders` — retrieve the user's reminder settings.
+- `PUT /api/reminders` — update reminder preferences.
+- `GET /api/notifications` — retrieve available user notifications.
+- `GET /api/profile` — retrieve the authenticated user's profile.
+
+Implement request validation, authorization, pagination where appropriate, and consistent error responses.
+
+Do not create endpoint stubs that return hardcoded sample data. Connect each implemented endpoint to its actual service and persistence layer.
+
+# PART 14 — AUTOMATED TESTING AND QUALITY AUDIT
+
+Test the entire platform, not just individual components.
+
+### Notes generation tests
+
+Verify that a chapter request produces a complete structured document, preserves section order, includes the required topics, and handles AI failures gracefully.
+
+Check that generated content can be saved, reopened, edited where permitted, and exported.
+
+### Handwriting tests
+
+Verify that page dimensions are correct, text remains legible, line wrapping works, and no elements are clipped or unintentionally overlapped.
+
+Check that handwritten styling remains consistent across different content types and screen sizes.
+
+### Diagram tests
+
+Verify that diagrams render, labels remain associated with the correct structures, arrows are positioned correctly, and interactions continue working after zooming and resizing.
+
+Test diagram export and label-hidden practice mode.
+
+### Library tests
+
+Verify class, subject, chapter, and syllabus relationships, search, filtering, bookmarks, progress tracking, and saved-note retrieval.
+
+### Authentication tests
+
+Verify personalized greetings, logged-out behavior, session expiry, access control, and separation of private user data.
+
+### Examination tests
+
+Test countdown calculations, missing official dates, date changes, examination completion, time-zone behavior, reminder scheduling, and duplicate-notification prevention.
+
+Use realistic test data but clearly separate test records from production academic content.
+
+# PART 15 — FINAL ACCEPTANCE CRITERIA
+
+The project is not complete until the following conditions are met:
+
+1. Students can generate detailed, ChatGPT-quality educational explanations in realistic handwritten notebook format.
+2. Notes contain the appropriate definitions, explanations, worked examples, equations, diagrams, and revision material for the selected topic.
+3. The handwriting renderer produces readable notebook pages rather than a generic cursive-font document.
+4. Academic diagrams are generated from structured, editable drawing specifications and are not replaced by generic illustrations.
+5. Diagram labels, arrows, positions, and scientific relationships are validated.
+6. Students can browse a properly organized class-wise, subject-wise, and chapter-wise library.
+7. NCERT alignment and supplementary source references are represented honestly, with clear verification status.
+8. Generated notes and user progress persist in the database.
+9. The home page greets authenticated users by their actual display names.
+10. Logged-out visitors see a neutral welcome message instead of a fake personalized or time-based greeting.
+11. The 2027 examination calendar uses official or clearly labeled provisional date information.
+12. Unannounced examination dates are explicitly marked as unannounced.
+13. Countdown values update correctly when examination dates change.
+14. Reminder preferences are stored and reminders are delivered through configured channels.
+15. The application is responsive, accessible, secure, and tested.
+16. Existing working features continue to function.
+17. The repository contains the necessary environment-variable documentation, database setup instructions, and deployment guidance.
+18. No major feature is represented by a fake button, placeholder API, hardcoded success response, or unconnected mock database.
+
+# FINAL IMPLEMENTATION INSTRUCTION
+
+First inspect the existing repository and determine how the current frontend, backend, AI provider, database, and notes functionality fit together.
+
+Then implement the solution in logical phases: core data models and services, notes-generation pipeline, handwriting rendering, diagram generation and validation, academic library, authentication and personalization, examination calendar, reminders, and end-to-end testing.
+
+After each phase, verify that the functionality works before proceeding.
+
+Reuse existing code where appropriate, correct underlying defects instead of hiding them, and avoid introducing unnecessary dependencies.
+
+Do not stop at a plan, a design mockup, or a list of recommendations. Complete the implementation as far as the available environment and connected services permit.
+
+At the end, provide a concise implementation report describing the files changed, the features completed, the tests performed, the environment variables required, any remaining limitations, and the exact commands needed to run the application.
+
+The final result should feel like a complete AI-powered educational platform: ChatGPT-quality teaching, realistic handwritten notes, accurate hand-drawn diagrams, an organized academic library, and reliable examination preparation tools—all integrated into one working full-stack application.

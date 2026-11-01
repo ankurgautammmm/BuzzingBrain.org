@@ -1,0 +1,1124 @@
+# BUZZINGBRAIN — ULTIMATE MASTER PROMPT FOR GOOGLE AI STUDIO
+## Complete Educational Platform Upgrade, AI Tutor, NCERT Learning, Virtual Labs, Role-Based Access, Security, and Production Deployment
+
+Act as a senior full-stack software architect, React and TypeScript engineer, AI systems engineer, educational technology specialist, 3D simulation developer, cybersecurity engineer, database architect, video-generation engineer, QA engineer, and UI/UX designer.
+
+Your task is to inspect, repair, improve, and extend my existing **BuzzingBrain** educational platform into a reliable, accessible, interactive, AI-powered learning ecosystem.
+
+BuzzingBrain's mission is to make high-quality education accessible, engaging, personalized, and affordable. The platform should support students through structured learning resources, AI-assisted explanations, NCERT-aligned materials, chapter notes, tests, AI-generated educational videos, interactive practical laboratories, personalized revision, and teacher-supported learning.
+
+**This is an implementation task, not just a planning task.** Inspect the existing repository, identify actual problems, modify the appropriate files, implement working features, and run available checks. Do not merely describe how I could implement them.
+
+Preserve the existing branding, architecture, working functionality, and useful components. Do not unnecessarily replace the entire application or create duplicate systems.
+
+---
+
+# PART 1 — AUDIT AND REPAIR THE EXISTING APPLICATION
+
+## 1. Inspect the complete codebase
+
+Inspect the existing application before making changes, including the frontend, backend, AI services, authentication, database, routing, video rendering, Practical Lab, Teacher Portal, NCERT resources, deployment configuration, and existing tests.
+
+Pay particular attention to the existing files and components, where present:
+
+- `src/App.tsx`
+- `src/components/AiTutorStudio.tsx`
+- `src/components/AiTutorChatDrawer.tsx`
+- `src/components/TeacherPortal.tsx`
+- `src/components/NcertBooksSection.tsx`
+- `src/components/AdaptiveLearningDashboard.tsx`
+- `src/components/TestSection.tsx`
+- `src/data/ncertSyllabus.ts`
+- `src/data/ncertPracticalsData.ts`
+- `src/data/curatedChapterNotes.ts`
+- `src/services/firebase.ts`
+- `src/lib/firebase-admin.ts`
+- `src/middleware/auth.ts`
+- `server/api.ts`
+- `server/app.ts`
+- `server/geminiService.ts`
+- `server/videoRenderer.ts`
+- `server/curriculumService.ts`
+- `src/db/index.ts`
+- `src/db/schema.ts`
+- `firestore.rules`
+- Existing environment examples, tests, package files, and deployment configuration.
+
+The filenames above are based on the existing project structure and should be adapted if files have changed.
+
+Identify:
+- Broken functionality.
+- API contract mismatches.
+- Incorrect imports and missing dependencies.
+- TypeScript errors.
+- Incorrect navigation and route handling.
+- Failed database operations.
+- Invalid or outdated AI model configuration.
+- Authentication and authorization vulnerabilities.
+- Hardcoded educational content presented as real data.
+- Incomplete video-generation workflows.
+- Nonfunctional buttons and placeholder interfaces.
+- Incomplete curriculum coverage.
+- Deployment and persistence limitations.
+
+Create an implementation checklist and fix problems in priority order. Do not stop after producing an audit report.
+
+## 2. Repair the AI Tutor Studio navigation errors
+
+The AI Tutor Studio is intended to be a full-page learning workspace, not merely a single chat dialogue box. Preserve its existing workspace architecture and repair every navigation item and tool.
+
+Investigate the known mismatch in which some frontend handlers send a single `message` field while the backend chat endpoint expects a `messages` array.
+
+Implement one consistent, typed request/response contract across the frontend, backend, and AI service.
+
+Repair:
+- Learn Concept.
+- Generate Notes.
+- AI Video Lessons.
+- Practice Questions.
+- Diagrams and Mind Maps.
+- Homework Scanner / Solve Image.
+- Revision Plan.
+- AI Tutor Chat.
+- Any additional existing navigation tools.
+
+For each tool:
+1. Validate the input.
+2. Send the correct API request.
+3. Handle loading states.
+4. Validate the response.
+5. Render the result correctly.
+6. Provide retry and recovery options.
+7. Display meaningful errors.
+8. Save the result when the feature supports persistence.
+
+Check the image-analysis contract specifically. Align the frontend's `imageBase64`, `prompt`, and expected response fields with the actual backend contract, including `userPrompt`, `subject`, and `solution` where appropriate.
+
+Prevent malformed requests from producing misleading results. Do not replace failed AI responses with unrelated formulas, fabricated educational explanations, or fake success messages.
+
+## 3. Create a reusable API architecture
+
+Implement a shared API service and typed contracts instead of duplicating request logic throughout components.
+
+Requirements:
+- Consistent JSON request and response formats.
+- Centralized error handling.
+- Authentication handling.
+- Request validation.
+- Bounded timeouts.
+- Safe retries for transient failures.
+- Cancellation of obsolete requests where appropriate.
+- Protection against duplicate submissions.
+- Clear handling of HTTP 400, 401, 403, 404, 429, and 500 responses.
+- Safe handling of empty responses, malformed JSON, and unavailable providers.
+
+Keep frontend and backend types synchronized. Avoid widespread `any` types and unsafe type assertions.
+
+---
+
+# PART 2 — COMPLETE AI TUTOR STUDIO
+
+## 4. Build a complete AI learning workspace
+
+Create a polished AI Tutor Studio with dedicated workspaces, not one generic text box.
+
+The interface should include:
+- Concept Learning.
+- Chapter Notes.
+- AI Video Lessons.
+- Practice Questions.
+- Mind Maps.
+- Homework Scanner.
+- Revision Planner.
+- AI Tutor Chat.
+- Saved Learning Library.
+- Recent Activities.
+- Progress and Learning Insights.
+
+The selected class, subject, chapter, topic, and difficulty should remain consistent across tools wherever appropriate.
+
+Use a responsive sidebar, a clear workspace header, a main content area, contextual actions, and a persistent learning-resource library.
+
+Students should be able to move from a concept explanation to notes, practice questions, diagrams, revision, and an associated video without repeatedly entering the same information.
+
+## 5. AI concept explanations
+
+Provide:
+- Simple explanations.
+- Detailed explanations.
+- Step-by-step reasoning.
+- Real-world examples.
+- Analogies.
+- Visual explanations.
+- Formula explanations.
+- Common misconceptions.
+- Practice questions.
+- Quick summaries.
+- Further learning suggestions.
+
+Adapt language and depth to the selected class and subject. Distinguish verified curriculum facts from generated explanations.
+
+## 6. Chapter notes and learning resources
+
+Generate structured notes with:
+- Learning objectives.
+- Definitions.
+- Important concepts.
+- Formulas and derivations.
+- Examples.
+- Diagrams.
+- Comparison tables.
+- Important points for revision.
+- Common mistakes.
+- Practice questions.
+- Summary sheets.
+
+Support reading, editing, copying, printing, and PDF export where feasible.
+
+Allow users to save, reopen, organize, and search their notes. Include metadata for class, subject, chapter, source, generation date, and verification status.
+
+Clearly label AI-generated content. Do not claim that generated notes are official NCERT text.
+
+## 7. Practice tests and assessment
+
+Implement:
+- Chapter-wise quizzes.
+- Topic-wise practice.
+- Full-length tests.
+- Difficulty selection.
+- Timed and untimed practice.
+- Multiple-choice questions.
+- Multiple-select questions.
+- Short-answer questions.
+- Long-answer questions.
+- Numerical problems.
+- Assertion-reason questions where suitable.
+- Answer keys and explanations.
+- Review of incorrect answers.
+- Retakes and progress tracking.
+
+Validate generated questions, options, correct answers, explanations, and question counts. Avoid duplicates and incorrect answer keys.
+
+Where relevant, support exam-specific patterns such as NEET-style practice without falsely claiming that generated questions are official previous-year questions.
+
+Keep student answers and scores on the server when authenticated. Do not trust client-supplied scores or completion status.
+
+## 8. Mind maps and diagrams
+
+Generate structured mind maps, concept maps, and subject diagrams.
+
+Include:
+- Valid node and edge structures.
+- Meaningful relationships.
+- Zoom and pan.
+- Readable labels.
+- Expandable sections where appropriate.
+- Export functionality where practical.
+- Clear handling of invalid AI output.
+
+Use compatible existing visualization libraries when possible. Do not show empty canvases as if generation succeeded.
+
+## 9. Homework Scanner and AI problem solving
+
+Allow students to upload supported images of handwritten or printed questions.
+
+The system should:
+- Validate file type and size.
+- Recognize visible text when supported.
+- Identify the question and relevant subject.
+- Explain the solution step by step.
+- Show formulas and calculations.
+- Provide the final answer when appropriate.
+- Explain likely mistakes.
+- Ask for a clearer image when recognition is uncertain.
+
+Never fabricate recognized handwriting or pretend an image was analyzed successfully when it was not. Protect uploaded files and avoid unnecessary retention.
+
+---
+
+# PART 3 — NCERT AND CURRICULUM LEARNING LIBRARY
+
+## 10. Official educational resources
+
+Create a structured NCERT resource library for applicable Classes 9–12, with the architecture capable of supporting additional classes and curricula later.
+
+Use official educational sources such as:
+
+- NCERT textbooks: https://ncert.nic.in/textbook.php
+- NCERT online textbooks: https://ncert.nic.in/division/pd/online-textbook.php?ln=en
+- ePathshala: https://epathshala.nic.in/
+- DIKSHA: https://diksha.gov.in/
+
+Include:
+- Class selection.
+- Subject selection.
+- Chapter listing.
+- Official textbook links.
+- Chapter summaries.
+- Learning objectives.
+- Related notes.
+- Practice questions.
+- Related experiments.
+- Video lessons.
+- Progress tracking.
+
+Verify chapter names and mappings against the applicable curriculum version. Store source URLs, last-checked dates, and verification status.
+
+Do not fabricate official book content, page numbers, chapter mappings, or textbook quotations.
+
+Respect copyright and licensing. Link to official materials and only store, reproduce, redistribute, or process textbook content where the applicable permissions and terms allow it. Do not bypass access restrictions or mirror copyrighted textbooks without authorization.
+
+## 11. Chapter-wise notes, tests, and syllabus coverage
+
+Provide a learning path for each supported class and subject.
+
+Each chapter should have:
+- Syllabus outline.
+- Learning objectives.
+- Notes.
+- Key concepts.
+- Formula sheets where applicable.
+- Diagrams and visualizations.
+- Practice questions.
+- Chapter tests.
+- Revision activities.
+- Related practicals.
+- Related videos.
+- Completion status.
+
+Calculate progress from real completed records. Do not use hardcoded syllabus percentages or label the syllabus complete until the relevant data has been verified.
+
+---
+
+# PART 4 — AI EDUCATIONAL VIDEO LESSONS AND SHORTS
+
+## 12. AI video lesson generator
+
+Build a complete video-generation workflow.
+
+Students should be able to choose:
+- Class.
+- Subject.
+- Chapter.
+- Topic.
+- Video duration.
+- Language.
+- Explanation difficulty.
+- Narration style.
+- Visual style.
+- Aspect ratio.
+
+Generate a structured lesson containing:
+1. Learning objective.
+2. Opening hook.
+3. Scene-by-scene outline.
+4. Narration.
+5. Visual descriptions.
+6. Diagrams or educational animations.
+7. On-screen labels where needed.
+8. Scene durations.
+9. Examples.
+10. Summary.
+11. Closing and optional further practice.
+
+Use real rendering and media-generation capabilities available in the project. Do not present a storyboard, text script, or collection of still images as a finished video.
+
+## 13. AI Shorts generator
+
+Create a dedicated workflow for educational Shorts, with vertical 9:16 output where supported.
+
+Features:
+- Topic and chapter selection.
+- Retention-focused opening.
+- Clear educational narrative.
+- Scene-based visual planning.
+- Narration generation.
+- Suitable background audio.
+- Scientifically accurate illustrations.
+- Text overlays where requested.
+- Closing call to action.
+- Render progress.
+- Preview and playback.
+- Retry after failure.
+- Exportable MP4 output.
+
+For science topics, use appropriate visual references such as cells, organisms, molecules, scientists, experiments, and diagrams. Prefer verified educational assets or permitted sources over generic visuals when the topic requires scientific specificity.
+
+Do not use inaccurate or unrelated images merely to fill a scene. Clearly identify illustrative or AI-generated visuals.
+
+## 14. Video rendering and durable storage
+
+Inspect the existing video renderer and make the complete pipeline reliable.
+
+- Validate scene data.
+- Verify narration and scene timing.
+- Use safe process execution and argument arrays for FFmpeg.
+- Handle rendering errors.
+- Validate output file existence and playback.
+- Verify codec, dimensions, and audio where required.
+- Persist rendering-job status.
+- Support progress polling and retry.
+- Store durable video assets using suitable persistent object storage.
+- Do not rely on an in-memory job map or ephemeral local files for production durability.
+- Protect private video assets and validate download permissions.
+
+Never claim a video is complete until a valid output has been produced.
+
+---
+
+# PART 5 — COMPLETE INTERACTIVE VIRTUAL PRACTICAL LAB
+
+## 15. Transform the Practical Lab into a Virtual Science Laboratory
+
+Develop a genuine interactive virtual laboratory, not a gallery of static 3D objects.
+
+Create separate sections for:
+- Physics.
+- Chemistry.
+- Biology.
+- Mathematics.
+- Computer Science.
+- Environmental Science.
+- Electronics.
+- Robotics and Engineering.
+- Anatomy Explorer.
+- Virtual Microscope.
+- Practical Exams.
+- Experiment Notebook.
+- AI Lab Assistant.
+- Teacher Lab Management.
+
+Use the existing Three.js and React Three Fiber dependencies if compatible with the project.
+
+## 16. Interactive 3D laboratory environment
+
+Include:
+- Lab benches and workstations.
+- Beakers, flasks, test tubes, and measuring cylinders.
+- Pipettes, balances, thermometers, and timers.
+- Microscopes and slides.
+- Pendulums, springs, lenses, mirrors, and prisms.
+- Electrical circuits and meters.
+- Molecular and biological models.
+- Relevant safety equipment.
+
+Support:
+- Orbit, pan, and zoom.
+- Object selection.
+- Rotation and inspection.
+- Drag-and-drop where practical.
+- Contextual information.
+- Equipment labels.
+- Measurement overlays.
+- Reset controls.
+- Guided mode.
+- Responsive controls.
+- A 2D alternative when 3D rendering is unavailable.
+
+Models must interact with the underlying simulation where required. Do not implement decorative objects that falsely appear to be working scientific apparatus.
+
+Optimize rendering, lazy-load assets, clean up WebGL resources, and support low-performance devices.
+
+## 17. Physics simulations
+
+Implement interactive experiments covering appropriate topics such as:
+
+- Simple pendulum and time period.
+- Mass-spring systems.
+- Newton's laws.
+- Friction and inclined planes.
+- Projectile motion.
+- Conservation of momentum.
+- Work, energy, and power.
+- Hooke's law.
+- Reflection and refraction.
+- Convex and concave lenses.
+- Focal-length experiments.
+- Prism dispersion.
+- Ohm's law.
+- Series and parallel circuits.
+- Electrical power.
+- Magnetic fields.
+- Electromagnetic induction.
+- Heat transfer.
+- Waves and sound.
+
+Each simulation should have appropriate variables, units, equations, measurements, and graphs.
+
+## 18. Chemistry simulations
+
+Include:
+- Virtual laboratory glassware.
+- Solutions and concentration calculations.
+- Dilution.
+- pH and indicators.
+- Acid-base neutralization.
+- Virtual titration.
+- Solubility and crystallization.
+- Reaction-rate demonstrations.
+- Molecular structures.
+- Atomic models.
+- Periodic table exploration.
+- Oxidation-reduction concepts.
+- Electrochemistry.
+- Filtration, evaporation, and distillation.
+
+Validate materials and procedures using appropriate simulation rules. Clearly state the limits of simplified models. Exclude dangerous experimental recipes and do not instruct students to carry out hazardous reactions outside the simulation.
+
+## 19. Biology simulations
+
+Include:
+- Plant and animal cell exploration.
+- Organelle identification.
+- Microscopy and slide exploration.
+- Magnification and focus controls.
+- Mitosis and meiosis.
+- Diffusion and osmosis.
+- Plant tissues.
+- Photosynthesis.
+- Human anatomy.
+- Respiratory and circulatory systems.
+- Digestive and nervous systems.
+- Genetics and Punnett squares.
+- DNA and RNA.
+- Ecosystems and food webs.
+- Population and environmental simulations.
+
+Distinguish real reference imagery from generated illustrations and simulated observations.
+
+## 20. Computer science, mathematics, electronics, and engineering
+
+Add practical activities for:
+- Algorithms and data structures.
+- Sorting and searching.
+- Binary trees and graph traversal.
+- Networking demonstrations.
+- SQL practice using sandbox data.
+- Digital logic circuits.
+- Function graphs and coordinate geometry.
+- Vectors and trigonometry.
+- Probability and statistics.
+- Virtual breadboards.
+- Basic electronics.
+- Robotics demonstrations.
+- Mechanical systems and engineering challenges.
+
+If code execution is supported, run untrusted student code in an isolated sandbox with strict resource limits and restricted network and filesystem access. Never execute arbitrary student code directly inside the production server process.
+
+## 21. Experiment workflow and lab reports
+
+Every supported experiment should follow:
+
+**Prepare → Explore → Perform → Measure → Analyze → Conclude → Assess**
+
+Provide:
+- Experiment objectives.
+- Theory.
+- Apparatus.
+- Safety guidance.
+- Step-by-step procedure.
+- Interactive simulation.
+- Observation tables.
+- Formula calculations.
+- Graphs.
+- Results.
+- Sources of error.
+- Conclusion.
+- Viva questions.
+- Assessment rubric.
+- Printable report.
+
+Implement unit conversion, significant figures, scientific notation, mean calculations, percentage error, uncertainty calculations where appropriate, and CSV export.
+
+Clearly distinguish student-entered values, simulated measurements, model-generated values, and theoretical predictions.
+
+## 22. Practical exams and experiment notebook
+
+Implement:
+- Practical Exam Mode.
+- Procedure validation.
+- Viva assessments.
+- Measurement and calculation checks.
+- Transparent grading rubrics.
+- Saved observations.
+- Experiment history.
+- Lab notebooks.
+- PDF reports.
+- Resume interrupted experiments.
+- Saved progress.
+
+Virtual practical completion must be distinguished from teacher-verified completion of physical laboratory work.
+
+Use real persistent storage and enforce user ownership on the backend.
+
+---
+
+# PART 6 — SEPARATE ADMIN, TEACHER, AND STUDENT LOGIN SYSTEMS
+
+## 23. Three distinct login experiences
+
+Create separate login routes and dashboards:
+
+- `/admin/login`
+- `/teacher/login`
+- `/student/login`
+
+After successful authorization:
+- Admin → `/admin/dashboard`
+- Teacher → `/teacher/dashboard`
+- Student → existing student dashboard.
+
+Keep the existing authentication provider and student workflow wherever possible.
+
+The login type identifies the intended portal; it does not grant a role. The server must independently determine the user's actual permissions.
+
+## 24. Administrator-controlled teacher authorization
+
+**Only email addresses explicitly authorized by an administrator may access the Teacher Portal.**
+
+Implement an administrator workflow to:
+- Add a teacher by email.
+- Assign classes, subjects, and grades.
+- Invite the teacher.
+- View invitation status.
+- Activate or suspend accounts.
+- Revoke access.
+- Edit assignments.
+- Review relevant audit events.
+
+Support teacher states such as:
+- `invited`
+- `active`
+- `suspended`
+- `revoked`
+
+The teacher workflow must be:
+
+1. An administrator creates an invitation.
+2. The invitation is linked to the intended normalized email.
+3. The teacher authenticates using the supported identity provider.
+4. The backend verifies the identity token.
+5. The backend retrieves the actual email and UID from the verified token.
+6. The backend checks the teacher authorization record.
+7. The invitation acceptance and activation requirements are verified.
+8. The server grants access only if all conditions are satisfied.
+
+Unauthorized users must receive a clear, safe access-denied message.
+
+Never authorize a teacher merely because the person has a Gmail account or chooses Teacher on the login page.
+
+## 25. Secure invitation handling
+
+If invitation links are used:
+- Generate cryptographically secure tokens.
+- Bind the invitation to the intended email.
+- Use a short expiration period.
+- Allow single-use acceptance.
+- Store only a secure hash of the token.
+- Reject expired, invalid, reused, or revoked tokens.
+- Audit invitation creation, acceptance, and revocation.
+
+The first administrator must be securely provisioned through a trusted administrative process. Never allow users to register themselves as administrators.
+
+## 26. Admin Dashboard
+
+Include:
+- Teacher authorization management.
+- Teacher invitations.
+- Class and subject assignments.
+- Account status management.
+- Student and teacher administration.
+- Audit logs.
+- System status.
+- Relevant usage and operational metrics.
+
+Only authenticated administrators with verified server-side permissions may access these operations.
+
+## 27. Teacher Dashboard
+
+Include:
+- Teacher profile.
+- Assigned classes and subjects.
+- Assignment creation.
+- Quiz and chapter-test creation.
+- Learning-resource sharing.
+- Practical-lab assignments.
+- Submission review.
+- Student progress for authorized classes.
+- Lab report grading.
+- Feedback and class-level insights.
+
+Teachers must not access unrelated classes, another teacher's private records, or global administrative settings.
+
+## 28. Student Dashboard
+
+Preserve the existing student features, including:
+- AI Tutor.
+- NCERT resources.
+- Notes.
+- Tests.
+- AI videos.
+- Practical labs.
+- Learning progress.
+- Revision plans.
+- Saved materials.
+
+Students must not gain teacher or administrator access by changing URLs, local storage, browser state, or request payloads.
+
+---
+
+# PART 7 — COMPLETE FRONTEND AND BACKEND SECURITY
+
+## 29. Protect secrets and configuration
+
+Audit environment files, source files, build configuration, deployment settings, and repository history where accessible.
+
+Protect:
+- AI provider API keys.
+- Database credentials.
+- Firebase Admin credentials.
+- Private signing keys.
+- Session secrets.
+- Cloud storage credentials.
+- Email-service credentials.
+- Invitation tokens.
+
+Rules:
+- Keep private secrets on the server or in a managed secrets service.
+- Never put private secrets in browser JavaScript, public source maps, HTML, or frontend environment variables.
+- Remember that Vite variables prefixed with `VITE_` are exposed to the client.
+- Use `.env.example` with placeholders only.
+- Add secret files and environment files to `.gitignore` as appropriate.
+- Rotate any credentials found to have been exposed.
+- Never print secret values in logs or reports.
+- Validate critical configuration at startup.
+
+## 30. Authentication and authorization
+
+Use Firebase Authentication and the Firebase Admin SDK where appropriate.
+
+- Verify ID tokens on the backend.
+- Derive UID and email from verified credentials.
+- Reject invalid and expired tokens.
+- Check current server-side role and account status.
+- Enforce role-based access control on every protected endpoint.
+- Apply resource ownership checks to all private data.
+- Use deny-by-default behavior.
+- Return HTTP 401 for unauthenticated requests and HTTP 403 for authenticated users without permission.
+- Never trust `role`, `email`, `uid`, `isAdmin`, or `teacherId` supplied by the client.
+
+If cookie-based sessions are implemented, use appropriate HTTP-only, Secure, and SameSite settings and CSRF protection. If bearer tokens remain in use, document and secure the token-handling approach.
+
+## 31. Frontend security
+
+Hiding sensitive interface elements is useful, but it is not a substitute for backend authorization.
+
+Implement:
+- Protected routes.
+- Role-aware navigation.
+- Safe loading states while authorization is checked.
+- No protected content flashing before authorization completes.
+- Clearing user-specific cached data on logout and account switching.
+- UID-scoped caches where local caching is necessary.
+- Safe Markdown and HTML rendering.
+- Input sanitization where appropriate.
+- Safe URL validation.
+- No unsafe dynamic code execution.
+- No private records in public static JSON.
+- No internal stack traces or sensitive server details in public errors.
+
+Never rely on `isAdmin` or similar client-side flags as proof of access.
+
+## 32. Backend and API security
+
+Audit every endpoint, including AI Tutor, notes, quizzes, images, video generation, teacher management, student progress, reports, and uploads.
+
+For every route, enforce:
+- Authentication.
+- Role authorization.
+- Resource ownership.
+- Input validation.
+- Output validation.
+- Request-size limits.
+- Rate limits.
+- Appropriate timeouts.
+- Safe error handling.
+
+Protect against:
+- Broken access control and IDOR.
+- XSS.
+- SQL injection.
+- CSRF where applicable.
+- Path traversal.
+- Open redirects.
+- Unsafe uploads.
+- Brute-force attacks.
+- Denial of service.
+- CORS misconfiguration.
+- Excessive AI usage.
+- Information disclosure.
+- Dependency vulnerabilities.
+
+Use parameterized database queries and safe ORM methods. Do not expose raw provider errors, database exceptions, private paths, or credentials.
+
+Configure production security headers and a tested Content Security Policy. Restrict CORS to trusted production origins.
+
+## 33. Database and storage security
+
+Inspect the existing Firebase/Firestore and PostgreSQL/Drizzle architecture before making changes.
+
+Establish and document the authoritative source for:
+- User roles.
+- Teacher invitations.
+- Teacher assignments.
+- Student progress.
+- Notes.
+- Conversations.
+- Test attempts.
+- Practical records.
+- Video jobs.
+- Saved resources.
+
+For Firestore:
+- Review `firestore.rules`.
+- Review relevant storage rules.
+- Deny public access to private collections by default.
+- Restrict users to their permitted records.
+- Prevent unauthorized role and status changes.
+- Remember that Firebase Admin SDK calls bypass Firestore client security rules; server-side authorization is still required.
+
+For PostgreSQL:
+- Use least-privilege database credentials.
+- Validate queries and inputs.
+- Enforce ownership checks.
+- Use transactions for sensitive multi-step operations where appropriate.
+
+Do not create conflicting authorization systems or duplicate sources of truth.
+
+## 34. Uploads, video assets, and private files
+
+Validate file size, MIME type, extension, and file signatures where practical.
+
+Use safe filenames and prevent path traversal. Do not execute uploaded files. Store private assets in access-controlled storage, and use short-lived signed URLs where appropriate.
+
+For production deployments such as Cloud Run:
+- Do not rely on ephemeral local files for durable assets.
+- Persist video job state and generated files.
+- Ensure jobs work across instance restarts.
+- Restrict access to private videos and reports.
+- Validate rendering inputs and use safe FFmpeg process execution.
+
+## 35. AI API protection
+
+Protect every AI endpoint.
+
+- Keep model credentials server-side.
+- Require authentication for private or expensive operations.
+- Apply per-user and per-IP rate limits.
+- Apply quotas and usage budgets.
+- Limit input and output sizes.
+- Use bounded concurrency and timeouts.
+- Validate structured AI responses.
+- Treat prompts, uploads, and generated text as untrusted.
+- Never execute AI-generated shell commands or code in the production environment.
+- Avoid logging sensitive student content unnecessarily.
+- Handle model errors without fabricating results.
+
+---
+
+# PART 8 — DATABASE, PERSONALIZATION, AND LEARNING ANALYTICS
+
+## 36. Persistent learning library
+
+Implement persistent storage for:
+- Saved notes.
+- Generated videos and their metadata.
+- AI Tutor conversations.
+- Practice questions and attempts.
+- Revision plans.
+- Experiment notebooks.
+- Practical exam results.
+- Learning preferences.
+- Teacher assignments and feedback.
+
+Associate records with authenticated users and timestamps. Enforce server-side ownership and access permissions.
+
+Local storage may be used as a temporary cache, but not as the authoritative source for private records, teacher authorization, or assessment scores.
+
+## 37. Personalized learning
+
+Build learning recommendations based on actual available data:
+- Completed chapters.
+- Incorrect answers.
+- Weak concepts.
+- Practice history.
+- Revision tasks.
+- Practical experiment progress.
+- Student-selected goals.
+
+Recommend suitable notes, questions, experiments, and videos.
+
+Do not invent performance statistics, completion percentages, or learning outcomes.
+
+## 38. Analytics and dashboards
+
+Use real records to calculate:
+- Quiz performance.
+- Chapter completion.
+- Practice consistency.
+- Revision completion.
+- Practical lab progress.
+- Learning-resource usage.
+- Class-level trends for authorized teachers.
+
+Clearly distinguish measured results, estimates, and recommendations. Avoid unsupported claims about learning improvement.
+
+---
+
+# PART 9 — ACCESSIBILITY AND DESIGN QUALITY
+
+## 39. Unified design system
+
+Preserve the existing BuzzingBrain branding and improve consistency across the app.
+
+Use:
+- Clear typography.
+- Consistent spacing.
+- Reusable cards and forms.
+- Responsive layouts.
+- Intuitive navigation.
+- Useful loading and error states.
+- Accessible color contrast.
+- Visible keyboard focus.
+- Reduced-motion support.
+- Appropriate touch targets.
+- Readable scientific notation and mathematical content.
+
+Avoid unnecessary visual complexity and oversized animation. Prioritize a polished, educational experience that performs well on ordinary student hardware.
+
+## 40. Accessibility
+
+Provide:
+- Semantic HTML.
+- Accessible labels.
+- Keyboard navigation.
+- Screen-reader support.
+- Captions or text alternatives for instructional media.
+- Reduced-motion preferences.
+- Adjustable text sizing where practical.
+- Clear focus states.
+- Alternative 2D interactions for 3D lab controls.
+- Error messages that explain how to recover.
+
+Test on mobile and desktop layouts.
+
+---
+
+# PART 10 — TESTING, BUILD, AND PRODUCTION READINESS
+
+## 41. Automated tests
+
+Create or update tests covering:
+
+### AI Tutor
+- Every navigation action.
+- Correct chat request format.
+- Missing or invalid messages.
+- Notes generation.
+- Practice-question validation.
+- Mind-map validation.
+- Revision plan persistence.
+- Image-analysis request/response alignment.
+- Video job status and output validation.
+- Loading, error, and retry behavior.
+
+### Authentication
+- Admin-only access.
+- Authorized active teacher access.
+- Unauthorized teacher denial.
+- Pending, suspended, and revoked teacher denial.
+- Student denial from teacher/admin APIs.
+- Forged roles and headers.
+- Invalid or expired tokens.
+- Expired or reused invitations.
+- Cross-user data access.
+
+### Practical Lab
+- Experiment selection.
+- Simulation parameter updates.
+- Formula calculations.
+- Unit conversion.
+- Observation tables.
+- Graph generation.
+- Experiment progression.
+- Saved and restored work.
+- Report generation.
+- Practical assessment.
+- Teacher and student permissions.
+
+### General security
+- Oversized uploads.
+- Invalid file types.
+- Malformed requests.
+- Rate-limit enforcement.
+- Unsafe URL handling.
+- XSS-related rendering cases.
+- Database ownership.
+- Error responses without secret leakage.
+
+## 42. Run real project checks
+
+Inspect the package scripts and available tooling. Run the appropriate commands for:
+- Dependency installation.
+- TypeScript checking.
+- Linting.
+- Unit tests.
+- Integration tests.
+- Production build.
+- Dependency security audit where available.
+
+Fix regressions introduced by the implementation.
+
+Do not silence errors by disabling TypeScript checks, broadly suppressing lint rules, or weakening tests.
+
+If a check cannot run because dependencies, credentials, external services, or environment configuration are unavailable, explain the exact limitation.
+
+## 43. Production deployment
+
+Inspect the current deployment configuration and adapt the application to its actual hosting platform.
+
+Verify:
+- Correct server startup and port binding.
+- Environment-variable configuration.
+- Firebase authentication configuration.
+- Database connectivity.
+- CORS and authentication redirects.
+- Production API URLs.
+- Persistent storage.
+- Video rendering dependencies.
+- Static asset serving.
+- Health checks.
+- Error handling.
+- Database and storage permissions.
+
+Do not claim deployment success unless the application has actually been deployed and verified.
+
+---
+
+# PART 11 — IMPLEMENTATION ROADMAP
+
+Implement changes incrementally in the following priority order.
+
+## Phase 1: Critical bug fixes
+- Repair AI Tutor API contracts.
+- Repair image analysis.
+- Fix broken navigation.
+- Fix backend response handling.
+- Remove misleading success states.
+- Fix critical startup and type errors.
+
+## Phase 2: Authentication and security
+- Secure Firebase token verification.
+- Implement separate Admin, Teacher, and Student login routes.
+- Implement administrator-controlled teacher invitations.
+- Enforce server-side role checks.
+- Fix database and storage access controls.
+- Protect all secrets and privileged APIs.
+
+## Phase 3: AI Tutor functionality
+- Complete concept explanations.
+- Notes and resource library.
+- Practice questions.
+- Mind maps.
+- Revision planning.
+- Conversation history.
+- Saved learning content.
+
+## Phase 4: Educational content
+- Verify NCERT curriculum mappings.
+- Implement chapter notes and tests.
+- Improve source attribution.
+- Add official resource links.
+- Validate curriculum completeness.
+
+## Phase 5: Video generation
+- Repair lesson and Shorts generation.
+- Improve scene and narration quality.
+- Implement reliable rendering jobs.
+- Add persistent video storage and playback validation.
+
+## Phase 6: Practical Laboratory
+- Create the interactive lab framework.
+- Implement a complete Physics experiment.
+- Add Chemistry and Biology experiments.
+- Implement measurements, calculations, graphs, and reports.
+- Add AI Lab Assistant and practical assessments.
+- Integrate teacher assignments.
+
+## Phase 7: Learning experience
+- Improve personalization.
+- Add real learning analytics.
+- Improve accessibility and responsive design.
+- Optimize performance and asset loading.
+
+## Phase 8: Final validation
+- Run automated tests.
+- Verify permissions.
+- Run production checks.
+- Document deployment requirements.
+- Report remaining limitations.
+
+Prioritize working features and security over decorative UI or a large number of unfinished features.
+
+---
+
+# PART 12 — REQUIRED FINAL DELIVERABLES
+
+When the implementation is complete, provide a factual report containing:
+
+1. Root causes discovered.
+2. Bugs fixed.
+3. Files created and modified.
+4. AI Tutor tools repaired.
+5. Authentication and authorization implemented.
+6. Teacher invitation workflow.
+7. Database and storage changes.
+8. Security vulnerabilities addressed.
+9. NCERT resources and curriculum mappings verified.
+10. AI video and Shorts features implemented.
+11. Practical experiments that work end to end.
+12. Features that are partially implemented.
+13. New dependencies and compatibility information.
+14. Commands used to run and test the project.
+15. Actual test and build results.
+16. Environment variables and deployment settings that must be configured.
+17. Remaining blockers and future improvements.
+
+Create or update the project documentation, including:
+- `README.md`
+- `.env.example`
+- `SECURITY.md`
+- `EXECUTION_PLAN_AND_FUTURE_IMPROVEMENTS.txt`
+
+Adapt existing documentation rather than creating contradictory duplicates.
+
+Never include secret values in documentation.
+
+## FINAL NON-NEGOTIABLE RULES
+
+- Inspect the existing project before editing.
+- Make real changes directly in the codebase.
+- Preserve working features.
+- Fix root causes instead of hiding errors.
+- Never trust frontend-only permissions.
+- Never expose private API keys.
+- Never grant teacher access without administrator authorization.
+- Never allow students or teachers to promote themselves to administrator.
+- Never fabricate educational facts, measurements, curriculum mappings, or test results.
+- Never present a mockup as a functional feature.
+- Never claim that a video, experiment, test, or deployment works without verifying it.
+- Keep the application maintainable, modular, accessible, and secure.
+- Test incrementally after each major phase.
+- If a task cannot be completed, state the blocker and provide a concrete next step.
+
+**Start now:** inspect the current repository, identify the most critical failures, and begin implementing Phase 1. Then continue through the remaining phases, preserving working functionality and verifying each major change. Do not stop after generating a plan or merely describing the required code.

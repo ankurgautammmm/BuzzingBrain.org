@@ -1,0 +1,297 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #030712;
+    color: #f3f4f6;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* ChatGPT 6 Astra Starfield Background */
+.astra-starfield {
+  background-color: #030712;
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 100px 150px, #e2e8f0, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 200px 80px, #fde047, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 300px 300px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 450px 220px, #93c5fd, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 600px 120px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 750px 280px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 900px 90px, #fef08a, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 1050px 240px, #cbd5e1, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 1200px 70px, #ffffff, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 1300px 450px;
+}
+
+/* Glassmorphism card for Astra UI */
+.astra-card {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.astra-card-hover:hover {
+  background: rgba(30, 41, 59, 0.7);
+  border-color: rgba(251, 191, 36, 0.35);
+}
+
+/* Notebook Skeleton Shimmer Effect */
+@keyframes shimmerSweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.45) 30%,
+    rgba(255, 255, 255, 0.75) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmerSweep 2.2s infinite;
+}
+
+/* Accessibility & Neuroinclusive Styles */
+html.text-size-large {
+  font-size: 112%;
+}
+
+html.text-size-xl {
+  font-size: 125%;
+}
+
+html.dyslexia-font,
+html.dyslexia-font * {
+  font-family: 'Comic Sans MS', 'Trebuchet MS', 'Verdana', sans-serif !important;
+  letter-spacing: 0.05em !important;
+  word-spacing: 0.1em !important;
+  line-height: 1.7 !important;
+}
+
+html.reduce-motion,
+html.reduce-motion * {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+}
+
+html.high-contrast {
+  filter: contrast(1.25) brightness(1.05);
+}
+
+html.focus-study-mode canvas,
+html.focus-study-mode .astra-starfield {
+  background-image: none !important;
+  background-color: #030712 !important;
+}
+
+/* Print Stylesheet for Handwritten Notes & High-Res PDF Export */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 6mm 8mm;
+  }
+  
+  *, *::before, *::after {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  body, html {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Hide web-only UI elements, headers, toolbars, buttons, drawers */
+  .print\:hidden,
+  .no-print,
+  .astra-navbar,
+  .astra-starfield,
+  canvas:not(.printable-canvas),
+  header,
+  footer,
+  nav,
+  aside,
+  button,
+  .fixed {
+    display: none !important;
+  }
+
+  /* Retain paper textures, ruled lines, red margins & ink colors */
+  .a4-landscape-sheet,
+  .a4-landscape-page,
+  .paper-ruled,
+  .paper-ruled-tight,
+  .paper-grid,
+  .paper-dotted,
+  .paper-plain,
+  .sticky-note-yellow,
+  .sticky-note-pink,
+  .sticky-note-blue {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Landscape Spread Sheet layout (2 register pages side-by-side per A4 sheet) */
+  .a4-landscape-sheet {
+    page-break-after: always !important;
+    break-after: page !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+    width: 100% !important;
+    min-height: 185mm !important;
+    box-sizing: border-box !important;
+    padding: 6mm !important;
+    background-color: #fbf9f2 !important;
+    border: 2px solid #e5dec9 !important;
+    border-radius: 8px !important;
+    overflow: visible !important;
+  }
+
+  .a4-landscape-page {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 100% !important;
+    padding-left: 28px !important;
+    padding-right: 12px !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+  }
+}
+
+/* ==========================================================================
+   Topper's Register Handwritten Paper Textures & Font Utilities
+   ========================================================================== */
+
+.font-hand-kalam {
+  font-family: 'Kalam', cursive, sans-serif;
+}
+
+.font-hand-caveat {
+  font-family: 'Caveat', cursive, sans-serif;
+}
+
+.font-hand-patrick {
+  font-family: 'Patrick Hand', cursive, sans-serif;
+}
+
+.font-hand-indie {
+  font-family: 'Indie Flower', cursive, sans-serif;
+}
+
+.font-hand-gloria {
+  font-family: 'Architects Daughter', cursive, sans-serif;
+}
+
+.font-sans-clean {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Paper Textures */
+.paper-ruled {
+  background-color: #fffdf8;
+  background-image: 
+    linear-gradient(90deg, transparent 46px, #ef4444 46px, #ef4444 48px, transparent 48px),
+    linear-gradient(#e2e8f0 1px, transparent 1px);
+  background-size: 100% 100%, 100% 32px;
+  line-height: 32px;
+}
+
+.paper-ruled-tight {
+  background-color: #fffdf9;
+  background-image: 
+    linear-gradient(90deg, transparent 40px, #ef4444 40px, #ef4444 42px, transparent 42px),
+    linear-gradient(#e5e7eb 1px, transparent 1px);
+  background-size: 100% 100%, 100% 26px;
+  line-height: 26px;
+}
+
+.paper-grid {
+  background-color: #fbfbfa;
+  background-image: 
+    linear-gradient(#e5e7eb 1px, transparent 1px),
+    linear-gradient(90deg, #e5e7eb 1px, transparent 1px);
+  background-size: 24px 24px;
+  line-height: 28px;
+}
+
+.paper-dotted {
+  background-color: #faf9f6;
+  background-image: radial-gradient(#94a3b8 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+  line-height: 28px;
+}
+
+.paper-plain {
+  background-color: #fffdf8;
+  line-height: 30px;
+}
+
+/* Spiral holes decoration */
+.spiral-holes {
+  background-image: radial-gradient(circle at 10px, #475569 4.5px, #94a3b8 5.5px, transparent 6px);
+  background-size: 24px 38px;
+  background-repeat: repeat-y;
+}
+
+/* Yellow, Pink & Blue Floating Sticky Notes */
+.sticky-note-yellow {
+  background-color: #fef08a;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+  border-top: 8px solid rgba(234, 179, 8, 0.4);
+}
+
+.sticky-note-pink {
+  background-color: #fbcfe8;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+  border-top: 8px solid rgba(236, 72, 153, 0.4);
+}
+
+.sticky-note-blue {
+  background-color: #bae6fd;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+  border-top: 8px solid rgba(14, 165, 233, 0.4);
+}
+
+/* Highlighting */
+.highlight-yellow {
+  background: linear-gradient(104deg, rgba(254, 240, 138, 0.3) 0.9%, rgba(254, 240, 138, 0.85) 2.4%, rgba(254, 240, 138, 0.6) 98%);
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+}
+
+.katex-display-wrapper {
+  margin: 1rem 0;
+  overflow-x: auto;
+}

@@ -1,0 +1,541 @@
+# BUZZINGBRAIN — COMPLETE PRODUCT REDESIGN, CONTENT RECONSTRUCTION AND FULL-STACK IMPROVEMENT SPECIFICATION
+
+## 1. Your Role and the Expected Result
+
+Act as an expert product designer, senior full-stack engineer, education-content specialist, NCERT curriculum researcher, AI engineer, and software quality auditor.
+
+You are working on my existing project, **BuzzingBrain**, an educational platform designed to help school students understand concepts, study from high-quality notes, practice questions, learn through videos, explore interactive simulations, and use AI for personalized learning.
+
+Your job is to transform the current application into a complete, polished, reliable, and genuinely useful educational product.
+
+Do not treat this assignment as a list of small UI improvements. Understand how the application currently works, identify the relationship between its features, and improve the complete student learning journey—from selecting a class and chapter to understanding a concept, revising it, practicing questions, and tracking progress.
+
+**The most important priorities are:**
+
+- Beautiful, realistic, handwritten-style notes that students would genuinely want to study.
+- Accurate, chapter-specific educational content aligned with the applicable NCERT curriculum.
+- A clean student interface without Teacher or Admin features appearing in the student dashboard or student navigation.
+- Fully functional learning features rather than decorative buttons and unfinished pages.
+- A consistent, modern, accessible interface across the entire platform.
+- Reliable AI tutoring, question generation, video lessons, and interactive learning experiences.
+- Secure authentication, correct permissions, reliable data storage, and a working production build.
+
+You must inspect and modify the existing repository. Preserve working features, existing integrations, and user data wherever possible. Do not replace the application with a generic template or create a separate demonstration that is disconnected from the actual product.
+
+---
+
+# 2. First Understand the Existing Application
+
+Before implementing changes, inspect the entire codebase and build a clear understanding of the current architecture.
+
+Identify the actual frontend framework, backend framework, routing system, authentication mechanism, database, AI providers, external APIs, environment variables, deployment configuration, and package manager.
+
+Read the source files responsible for:
+
+- Student dashboard and navigation.
+- Login, registration, user profiles, and role handling.
+- Notes, textbook content, syllabus definitions, and chapter mappings.
+- Quiz generation, question banks, answers, and explanations.
+- AI tutoring and educational content generation.
+- Video generation and playback.
+- Virtual laboratories and 3D learning.
+- Progress tracking and student analytics.
+- Backend endpoints, database models, and API clients.
+- Reusable components, design tokens, stylesheets, and responsive layouts.
+
+Trace important features from the user interface to the backend and database. For example, when a student saves a note, determine where the action is handled, whether the record is actually stored, how it is retrieved, and whether it is associated with the correct student.
+
+Do not assume that a feature works because its page exists. Verify its actual behavior.
+
+After inspecting the code, establish the existing build status and create a clear implementation sequence. Then begin fixing the actual application. Do not stop after presenting the audit.
+
+---
+
+# 3. Redesign BuzzingBrain as a Cohesive Learning Platform
+
+## 3.1 Visual direction
+
+Give BuzzingBrain a distinctive, premium education-technology identity. The interface should feel modern and intelligent while remaining calm enough for students to study for long periods.
+
+Use a consistent design system throughout the platform. Define a small, coordinated palette, readable typography, predictable spacing, consistent border radii, reusable cards, form controls, navigation elements, and clear interaction states.
+
+Use a light, paper-inspired reading experience for notes and textbook content. The rest of the platform may use a clean, modern dashboard design with restrained accent colors. If the existing application already has an established brand identity, refine it instead of replacing it unnecessarily.
+
+Use visual effects only when they improve the experience. Avoid excessive neon, unnecessary gradients, constant animations, oversized headings, decorative cards with no purpose, and complicated backgrounds behind educational content.
+
+Every screen must feel like part of the same application. The dashboard, notes reader, AI tutor, quizzes, videos, virtual labs, profile, and settings must share a consistent visual language.
+
+## 3.2 Improve the overall user experience
+
+Every page should answer three questions immediately:
+
+1. Where am I?
+2. What can I do here?
+3. What is the next useful action?
+
+Use clear headings, concise descriptions, meaningful actions, and sensible page layouts. Place primary actions where students naturally expect them. Do not bury important learning functions inside unnecessary menus.
+
+Every interactive element must provide visible feedback when clicked, submitted, selected, saved, or completed. Loading, success, empty, and error states must be designed as part of the feature rather than added as an afterthought.
+
+Remove duplicate actions, confusing labels, redundant panels, inconsistent spacing, and elements that distract students from learning.
+
+## 3.3 Responsive behavior
+
+Design the interface for desktop, tablet, and mobile rather than merely shrinking the desktop layout.
+
+On desktop, use the available space efficiently without stretching reading content across the entire screen. On mobile, use compact navigation, readable text, appropriately sized touch targets, and vertically stacked layouts.
+
+Long equations, diagrams, tables, handwritten notes, and interactive 3D objects must remain usable on narrow screens.
+
+Verify the actual application at multiple viewport sizes. Correct horizontal overflow, clipped menus, overlapping buttons, unreadable text, and layouts that break when content becomes longer than expected.
+
+---
+
+# 4. Completely Improve the Student Dashboard
+
+The student dashboard must be the central starting point for learning. It should not feel like an administrative control panel or a collection of unrelated feature cards.
+
+When a student signs in, show a welcoming dashboard that helps them continue studying immediately.
+
+At the top, display a simple greeting and the student's relevant learning context, such as selected class or current study goals, when this information is available.
+
+The main section should prioritize the following:
+
+**Continue Learning:** Display the most recently studied chapter, topic, or lesson. Include a clear action to resume it. Retrieve this information from actual stored progress rather than displaying a hardcoded example.
+
+**My Subjects:** Show the subjects available to the student, organized in a clear visual layout. Each subject should lead to its real chapter list and learning resources.
+
+**Study Notes:** Provide direct access to recently opened notes, saved notes, and available revision materials.
+
+**Practice and Quizzes:** Let students begin a quiz, resume an unfinished attempt where supported, or review their previous results.
+
+**AI Tutor:** Provide an obvious way to ask a question, explain a difficult concept, or get help with the current chapter.
+
+**Video Lessons and Interactive Learning:** Surface relevant lessons, simulations, and 3D experiences where they exist and have been verified to work.
+
+**Learning Progress:** Show meaningful statistics based on actual student activity, such as completed topics, quiz performance, and recent learning history.
+
+Arrange these sections according to importance. Continue Learning and the student's next useful action should receive more attention than secondary statistics.
+
+If a student has just registered and has no activity, show a helpful onboarding state that guides them to select a subject, open a chapter, or start their first lesson. Do not display empty charts, fake streaks, invented scores, or fabricated progress.
+
+Allow students to personalize supported preferences without overwhelming the dashboard with settings.
+
+---
+
+# 5. Remove Teacher and Admin Features From the Student Tab
+
+This is a specific functional and navigation requirement.
+
+The student-facing application must not show Teacher or Admin tabs, role-switching controls, staff-management cards, administrative dashboards, class-management tools, or administrative actions.
+
+Inspect every student-facing page and component, including the main navigation, mobile menu, dashboard, profile menu, onboarding flow, settings, footer, and contextual action menus.
+
+Remove Teacher and Admin navigation entries from the student experience. If the current application has a combined role-based menu, separate it into appropriate student, teacher, and admin experiences.
+
+The student should see only features relevant to their learning. A student must not be able to change their own role to Teacher or Admin through a dropdown, a frontend variable, or a modified request.
+
+Do not solve this problem by hiding buttons alone. Protect teacher and administrative endpoints with server-side authentication and authorization. Test direct URL access and direct API calls using a student account.
+
+Preserve existing Teacher and Admin capabilities for authorized users if those capabilities are part of the application. They must remain accessible through the correct role-specific interface, not through the student dashboard.
+
+Do not accidentally delete legitimate administrator accounts, remove necessary database records, or break existing authorization flows.
+
+If the application supports only student accounts today, implement a student-only interface without inventing a teacher-management system that the product does not need.
+
+The final result must have clear role separation, a simple student experience, and secure server-side permissions.
+
+---
+
+# 6. Rebuild the Handwritten Notes Experience Properly
+
+This is one of the most important improvements in the entire project.
+
+I do not want ordinary paragraphs placed inside a box and described as handwritten notes. I want an attractive, realistic, well-organized study-notebook experience that combines the visual appeal of handwritten school notes with the accuracy and readability of professionally prepared learning material.
+
+## 6.1 The appearance of the notes
+
+Create a dedicated notes-reading experience with a paper-like visual design.
+
+The page should resemble a carefully prepared student's notebook, with a subtle ruled or grid background, consistent margins, a clear heading hierarchy, and visually distinct sections.
+
+Use a readable handwriting-style typeface for appropriate headings, annotations, short summaries, and highlighted terms. Use a highly readable font for longer explanations when a handwriting font would reduce clarity. The entire chapter must not become difficult to read simply to achieve a handwritten appearance.
+
+Design each chapter as a sequence of well-composed notebook pages or sections. Each section should have enough whitespace to make it easy to revise, while avoiding unnecessarily large blank areas.
+
+Use restrained colors to distinguish definitions, important concepts, formulas, examples, common mistakes, and examination tips. Use underlining, arrows, circles, margin annotations, and handwritten-style callouts sparingly so they emphasize important information rather than cluttering the page.
+
+Headings, page labels, section dividers, and diagram styles should be consistent throughout all subjects.
+
+The final design should feel like high-quality handwritten study notes that have been carefully reviewed and digitally organized.
+
+## 6.2 Different subjects need different visual treatments
+
+Do not use the same note template mechanically for every subject.
+
+For Physics, emphasize correctly typeset equations, units, labelled diagrams, derivations, numerical examples, and step-by-step solutions.
+
+For Chemistry, provide balanced chemical equations, reaction conditions, structures, periodic trends, appropriate tables, and worked examples where relevant.
+
+For Biology, emphasize accurate labelled diagrams, biological processes, classification, comparisons, scientific terminology, and sequential flowcharts.
+
+For Mathematics, use readable mathematical notation, properly aligned calculations, theorem statements, derivations, worked problems, and clearly explained steps.
+
+For History and Geography, emphasize timelines, maps, cause-and-effect relationships, comparisons, important terminology, and concept diagrams.
+
+For Computer Science, use code blocks, algorithms, flowcharts, examples, and step-by-step execution traces where appropriate.
+
+These are examples of subject-specific presentation. Apply them according to the actual curriculum and content of each chapter.
+
+## 6.3 Make diagrams genuinely useful
+
+Every important diagram should help explain a concept.
+
+Use accurate, legible diagrams with labels placed next to the relevant structures. Avoid distorted labels, illegible generated text, decorative illustrations that teach nothing, and diagrams that contradict the written explanation.
+
+For equations, complex labels, scientific names, and detailed diagrams, prefer editable text, SVG, canvas-based rendering, or other structured rendering methods where appropriate.
+
+If image generation is used for illustrative artwork, inspect the result and do not rely on generated text inside an image for essential educational information.
+
+Provide captions and explanatory descriptions for important diagrams. Make them accessible and usable on mobile.
+
+## 6.4 Structure the actual notes
+
+Each chapter should contain the sections that genuinely apply to it:
+
+- A chapter title and short introduction.
+- Learning objectives.
+- Topic-wise explanations in simple language.
+- Important definitions and terminology.
+- Key concepts and relationships.
+- Formulas, units, laws, and derivations where relevant.
+- Worked examples with complete reasoning.
+- Diagrams, tables, timelines, or flowcharts as appropriate.
+- Common misconceptions and mistakes.
+- Important comparisons and revision points.
+- Practice questions with answer explanations.
+- A concise final revision sheet.
+- A knowledge check that tests understanding.
+
+Do not force irrelevant sections into a chapter. A history chapter should not contain meaningless formula headings, and a mathematics chapter should not contain an unrelated experiment section.
+
+The notes should explain concepts, not merely list keywords. A student should be able to understand the chapter without needing to guess what each bullet point means.
+
+## 6.5 Add useful notes-reader functionality
+
+Implement these features using the existing application architecture:
+
+- A chapter and topic table of contents.
+- Navigation between topics and sections.
+- Search within the current chapter.
+- Bookmarks for important pages or topics.
+- Personal annotations where feasible.
+- Adjustable text size and reading preferences.
+- Light and dark reading modes where they remain comfortable for studying.
+- Progress indicators based on actual reading or completion events.
+- Related quizzes and video lessons.
+- Print-friendly layouts.
+- PDF export when supported by the existing stack.
+- Clear source information and content-review status.
+
+Saved notes, bookmarks, and annotations must persist correctly for the appropriate user. Protect private annotations and learning records from unauthorized access.
+
+PDF exports must preserve readable text, mathematical expressions, diagrams, headings, spacing, and sensible page breaks.
+
+Do not add buttons for functionality that has not been implemented.
+
+---
+
+# 7. Audit and Correct All NCERT Content
+
+The visual redesign must never take priority over educational accuracy.
+
+Inspect the actual syllabus files, chapter data, curated notes, fallback generators, question banks, and AI prompts.
+
+Identify every supported class, subject, chapter, and topic. Verify names, order, mappings, and content against the applicable official NCERT textbooks and syllabus materials.
+
+Use the appropriate edition and account for applicable syllabus changes. Do not assume that every historical textbook chapter remains part of the current syllabus.
+
+Create a structured content inventory that records:
+
+- Class and subject.
+- Chapter identifier and chapter title.
+- Topics and subtopics.
+- Whether notes exist.
+- Whether the notes are complete.
+- Whether the content has been verified against an appropriate source.
+- Whether questions, diagrams, examples, and revision materials exist.
+- Any identified errors or missing material.
+
+Use this inventory to identify gaps systematically.
+
+## 7.1 Correct generic fallback content
+
+Search for generic placeholders, repeated definitions, empty explanations, unrelated examples, incorrect chapter labels, and text that gives the appearance of complete notes without teaching anything.
+
+Replace such content with accurate, chapter-specific explanations wherever reliable source material is available.
+
+If the correct content cannot be verified, show a clear content-unavailable or under-review message. Do not generate a random explanation just to make a chapter appear complete.
+
+Make the fallback logic intelligent enough to distinguish between an unavailable resource and valid chapter-specific content.
+
+## 7.2 Use AI responsibly
+
+AI may help draft explanations, create practice questions, simplify difficult concepts, and propose diagrams. However, AI-generated content must not automatically be labelled as verified NCERT material.
+
+Use trusted source context, the correct class and chapter, and the applicable learning objective when generating educational material.
+
+Validate generated responses for completeness, structure, relevance, and answer consistency. Verify factual claims against authoritative sources when required.
+
+Where source verification has not occurred, identify the material as AI-generated or unverified as appropriate.
+
+Remove unsupported claims such as guaranteed examination questions, guaranteed results, or complete syllabus coverage unless there is adequate evidence for the claim.
+
+Do not fabricate textbook quotations, page numbers, references, or official endorsements.
+
+---
+
+# 8. Improve the Entire Learning Workflow
+
+Students should be able to move naturally between learning, understanding, practice, and revision.
+
+A typical workflow should be:
+
+**Select class → Choose subject → Open chapter → Study notes → Watch a related lesson → Ask the AI tutor → Practice questions → Review mistakes → Revise weak topics.**
+
+Implement appropriate navigation and context preservation between these steps.
+
+For example, when a student opens the AI tutor from a Biology chapter, the tutor should receive the correct class, subject, chapter, and topic context when available. It should not require the student to repeat information already known by the application.
+
+After a quiz, students should be able to open relevant notes or review the concepts associated with incorrect answers.
+
+When a student finishes a lesson, update progress only when the completion event actually occurs. Do not mark content as completed merely because its page was opened.
+
+Recommendations should be based on available learning history, quiz performance, bookmarks, and incomplete topics. If insufficient information exists, provide simple general recommendations rather than fabricated personalization.
+
+The application should help students understand what to study next without making the learning process feel complicated.
+
+---
+
+# 9. Improve Quizzes and Question Quality
+
+Review the question-generation logic, stored questions, answer keys, and quiz interface.
+
+Every question must correspond to the selected subject, class, chapter, and intended difficulty.
+
+For multiple-choice questions, validate that the number of options is correct, the options are meaningful, and the answer key refers to a valid option. Ensure that the question is unambiguous and that the explanation actually supports the correct answer.
+
+For numerical problems, check the calculations, units, intermediate steps, and final answer. For conceptual questions, ensure that the explanation is scientifically and academically correct.
+
+Remove duplicates, broken questions, unrelated options, repeated generic content, and malformed AI responses.
+
+During a quiz, provide a clear question number, answer selection, progress indicator, and timer if the quiz is timed. Make the timer behavior explicit and reliable. Allow students to review their answers when the quiz rules permit it.
+
+After submission, display the score, correct and incorrect answers, explanations, and suggested topics for revision. Store the attempt and update progress through the existing backend when supported.
+
+When question generation fails, show a useful error or use a validated local question bank. Never silently replace a chapter-specific quiz with unrelated questions.
+
+Test the complete quiz lifecycle, including starting, answering, submitting, reviewing, saving results, and reopening previous attempts.
+
+---
+
+# 10. Make the AI Tutor Dependable
+
+The AI tutor should function as an educational assistant rather than a generic chatbot.
+
+When answering a question, use the student's learning context where available. Explain difficult concepts in simple language and offer examples, analogies, step-by-step reasoning, and revision questions when appropriate.
+
+Support useful learning modes such as:
+
+- Explain a concept simply.
+- Give a worked example.
+- Explain a solution step by step.
+- Compare two related concepts.
+- Identify a mistake in an attempted solution.
+- Create a short revision summary.
+- Ask practice questions about the current topic.
+
+The interface should make it easy to enter a question, send it, see the response, ask a follow-up, and begin a new topic.
+
+Display an appropriate loading state while the AI is working. Handle network errors, unavailable models, rate limits, invalid responses, and timeouts with clear messages and retry options.
+
+Keep AI service credentials on the backend. Validate requests and responses, protect expensive endpoints with appropriate rate limits, and avoid exposing internal stack traces or secret values.
+
+Do not let the AI claim that an answer is officially verified if it has not been checked. If the system cannot confidently answer from the available evidence, it should communicate uncertainty and guide the student toward reliable material.
+
+If image-based question solving, handwriting recognition, voice input, or text-to-speech already exists, inspect and repair the actual implementation. Do not add superficial controls that simulate functionality without performing it.
+
+---
+
+# 11. Improve Video Lessons and Educational Animations
+
+Video lessons must teach specific concepts clearly and accurately.
+
+Each lesson should have a defined class, subject, chapter, topic, and learning objective. The script should introduce the question or concept, explain it in a logical sequence, show useful examples or visualizations, and finish with a concise recap.
+
+Use educational animations, accurate labelled diagrams, meaningful transitions, and readable on-screen text. Avoid filling the screen with dense paragraphs, irrelevant stock footage, or visuals that do not match the narration.
+
+For Biology, show accurate structures and processes. For Physics, visualize the relevant physical principles. For Chemistry, represent reactions and structures appropriately. For Mathematics, show calculations and diagrams step by step.
+
+Generated visuals and scripts must be checked for incorrect scientific labels, misspellings, inconsistent terminology, and misleading demonstrations.
+
+Where possible, provide captions, transcripts, playback controls, and lesson progress tracking.
+
+If video generation depends on an external AI service, handle missing credentials, API failures, generation delays, and failed playback appropriately. Never display a successful-generation message until the operation has actually succeeded.
+
+Reuse existing video infrastructure where possible instead of introducing unnecessary services or replacing a working integration.
+
+---
+
+# 12. Improve Virtual Labs and 3D Learning
+
+Interactive learning should be educationally meaningful, not simply visually impressive.
+
+For every virtual lab, show the learning objective, relevant equipment or components, procedure, interactive controls, observations, explanation, and conclusion as appropriate to the experiment.
+
+Make the simulation respond correctly to user actions. Check that calculations, displayed values, labels, and results are consistent with the underlying scientific principles.
+
+Clearly distinguish simulated observations from real-world measurements.
+
+For 3D learning, ensure that models load reliably, camera controls behave predictably, labels are readable, and the student can understand what each part represents. Connect each important model component to a useful explanation.
+
+Optimize models and textures, avoid unnecessary rendering work, and provide a helpful fallback for unsupported devices or WebGL failures.
+
+If an existing 3D anatomy viewer is present, improve its actual models, navigation, descriptions, and performance. Do not claim that a decorative model is anatomically complete or suitable for medical diagnosis.
+
+---
+
+# 13. Build Meaningful Student Progress Tracking
+
+Use actual stored learning activity to show students what they have achieved and what needs attention.
+
+Provide useful views of completed chapters, quiz attempts, recent scores, topics that need revision, and learning history where the data is available.
+
+Use simple visualizations with clear labels and accurate values. Avoid meaningless charts, hardcoded percentages, fake learning streaks, or progress indicators that do not correspond to real events.
+
+Provide a useful empty state for new students and students who have not attempted any quizzes.
+
+Use learning data to recommend revision topics where possible. Explain recommendations in student-friendly language.
+
+Ensure each student can access only their own private learning records unless an authorized feature explicitly permits otherwise.
+
+---
+
+# 14. Make the Application Reliable, Secure, and Maintainable
+
+Inspect the frontend, backend, database, authentication system, and API integration together.
+
+Fix actual startup failures, missing modules, broken imports, TypeScript errors, runtime exceptions, invalid API contracts, and database connection issues.
+
+Validate user input and API responses. Handle missing fields, invalid identifiers, malformed AI output, unavailable external services, and database failures without crashing the application.
+
+Use secure server-side authentication and role checks. Students must not be able to access administrative operations by editing client-side state or directly calling protected endpoints.
+
+Keep passwords, API keys, JWT secrets, database credentials, and other sensitive values out of source control and browser bundles.
+
+Check environment-variable usage, production API URLs, CORS configuration, session handling, and deployment settings. Preserve the existing hosting and database architecture unless there is a clear technical reason to change it.
+
+Use safe database migrations for necessary schema changes. Do not delete user data, reset production collections, or replace real data with test fixtures during ordinary implementation.
+
+Improve performance by optimizing large assets, reducing unnecessary network requests, avoiding repeated expensive computations, and loading heavy components only when appropriate.
+
+Add appropriate error boundaries and meaningful error messages. Do not expose internal stack traces or secret configuration values to students.
+
+---
+
+# 15. Accessibility and Student-Friendly Interaction
+
+Ensure that the platform can be used by students with different learning needs and devices.
+
+Use clear language, readable typography, consistent layouts, keyboard-accessible navigation, visible focus indicators, and sufficient contrast.
+
+Give form controls proper labels. Provide appropriate alternative text for meaningful images and descriptions for important diagrams.
+
+Support adjustable reading preferences where practical. Avoid flashing visuals, excessive motion, and animations that interfere with concentration.
+
+Respect reduced-motion preferences. Ensure that information is not communicated only through color.
+
+Make errors specific and helpful. For example, explain which field needs correction instead of showing a generic failure message.
+
+Design empty states and instructions to help students recover from mistakes independently.
+
+Collect only necessary personal information, apply suitable protections for school students, and avoid exposing student information through public links, analytics, logs, or AI requests.
+
+---
+
+# 16. Implementation Method: Change the Actual Code
+
+Implement improvements in a controlled sequence.
+
+First, fix critical startup, build, security, and authorization problems. Next, correct student navigation and core learning workflows. Then improve the notes content and handwritten presentation. After that, refine quizzes, AI tutoring, video lessons, interactive features, progress tracking, accessibility, and performance.
+
+Follow the existing architecture and coding conventions. Reuse working components and services. Introduce new abstractions only when they improve clarity or solve a real problem.
+
+Do not create duplicate routes, multiple competing sources of truth for chapter data, redundant API clients, or unnecessary replacement components.
+
+Keep class, subject, chapter, and topic information consistent across notes, quizzes, AI tutoring, videos, and progress tracking. Prefer a single validated source of truth for shared curriculum metadata when the existing architecture permits it.
+
+After each major change, run the relevant checks and inspect the result. Fix regressions before proceeding.
+
+Do not mark a task complete simply because its code was written. Verify that the feature works in the real application.
+
+If an external API, credential, or service is unavailable, implement the appropriate safe behavior and report what could not be verified. Never fabricate a successful result.
+
+---
+
+# 17. Test the Finished Application
+
+Run the actual build, type-check, lint, and test commands supported by the repository.
+
+Test the application in a real browser or available test environment where possible.
+
+Verify that:
+
+- The application starts and the production build succeeds.
+- Student login and logout work correctly.
+- Students do not see Teacher or Admin navigation.
+- Students cannot access protected teacher/admin endpoints.
+- Legitimate authorized access still works.
+- Notes load for the correct class, subject, and chapter.
+- Handwritten-style notes remain readable on mobile.
+- Diagrams, equations, and PDF exports render correctly where supported.
+- Bookmarks and progress persist correctly.
+- Quiz answers, scores, and explanations are consistent.
+- AI tutor failures are handled properly.
+- Video, virtual lab, and 3D features show accurate states when services or assets are unavailable.
+- Dashboard statistics come from real data.
+- Invalid requests and database failures do not expose sensitive information.
+- No critical regressions have been introduced.
+
+Do not claim a test passed unless it was actually run and the result was checked.
+
+---
+
+# 18. Final Deliverables
+
+At completion, provide a concise but evidence-based report that explains:
+
+1. What was wrong with the original application.
+2. Which changes were actually implemented.
+3. Which source files and components were changed.
+4. How the handwritten notes experience was redesigned.
+5. Which curriculum and content issues were corrected and which remain unverified.
+6. How Teacher and Admin functionality was removed from the student interface and protected from unauthorized access.
+7. Which AI and learning features were repaired or improved.
+8. Which build commands and tests were executed, including their actual results.
+9. Which features remain incomplete and why.
+10. Any environment variables, database migrations, or deployment steps required.
+
+Distinguish between implemented, tested, partially implemented, and not completed.
+
+Do not provide a list of imagined improvements and claim the work is finished.
+
+## Final instruction
+
+**Begin by inspecting the existing BuzzingBrain repository, then implement the improvements directly in the project.**
+
+The intended result is a coherent educational product with beautifully presented and trustworthy study notes, a student-first dashboard, secure role separation, reliable learning features, and a polished experience across devices.
+
+Make every design decision serve the student's ability to learn. Make every technical change preserve reliability and security. Make every educational claim traceable to the evidence available.
+
+Work systematically, verify your changes, and continue until the highest-priority improvements have been implemented and tested. If the entire scope cannot be completed in one pass, finish a coherent, tested set of high-priority changes first and report the exact remaining work rather than pretending everything is complete.
